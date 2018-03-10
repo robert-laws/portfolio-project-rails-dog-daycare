@@ -94,8 +94,8 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 #### Add Logic to Require Users to Complete Profile
 
-- [ ] add logic to controller to check if profile is complete (has address and dog)
-- [ ] redirect to profile page (user_path) with notice to complete profile
+- [x] add logic to controller to check if profile is complete (has address and dog)
+- [x] redirect to profile page (user_path) with notification to complete profile
 
 #### Setting up the Form Associations
 
