@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :addresses
-  has_many :dogs
+  has_many :addresses, dependent: :destroy
+  has_many :dogs, dependent: :destroy
 
   validates :username, presence: true
   # validates :password, presence: true

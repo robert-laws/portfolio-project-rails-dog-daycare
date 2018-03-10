@@ -87,6 +87,11 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] dog has fields name, breed, age, sex, user_id
 - [x] associate dog with a use using a has_many relationship
 
+#### Seed Data for Addresses and Dogs
+
+- [x] add address and dog seed data
+- [x] associate address and dog with user accounts
+
 #### Add Logic to Require Users to Complete Profile
 
 - [ ] add logic to controller to check if profile is complete (has address and dog)
