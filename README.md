@@ -36,3 +36,33 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] add placeholder logo for navbar
 - [x] add placehold links for pages - About, Locations, and Activities
 - [x] setup application_controller#current_path method, use in layouts/application to apply styles conditionally
+
+## Phase 2
+
+### Users
+
+- [ ] create model and migration for users
+- [ ] add fields first_name, last_name, email, username, and password_digest
+- [ ] add bcrypt gem to Gemfile
+- [ ] add has_secure_password to model
+- [ ] test model by add seed data for creating users
+
+### Basic Authentication
+
+- [ ] create sessions controller
+- [ ] add new, create, and destroy methods
+- [ ] add logic to authenticate users and add a session variable
+- [ ] update application controller to include a current_user method
+- [ ] update navigation to inlcude sign in, sign up, and logout buttons
+
+### Omniauth Integration
+
+- [ ] update Gemfile with omniauth and omniauth-github
+- [ ] setup oauth with github
+- [ ] add omniauth file in initializers
+- [ ] add link to sign in via github
+- [ ] add controller logic to sessions controller to authenticate user and create a record in the users table
+- [ ] add validations for user model
+- [ ] add error messages for views
+- [ ] add flash for alerts and notifications
+- [ ] test authenticate model
