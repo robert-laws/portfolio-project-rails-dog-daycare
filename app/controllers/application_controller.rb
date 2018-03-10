@@ -20,6 +20,13 @@ class ApplicationController < ActionController::Base
     @current_path = request.env['PATH_INFO'].split("/")[1]
   end
 
+  def require_permission
+    if current_user != User.find(params[:id])
+      redirect_to root_path
+    end
+  end
+
   helper_method :current_user
   helper_method :current_path
+  helper_method :require_permission
 end
