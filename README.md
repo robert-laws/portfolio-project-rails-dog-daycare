@@ -35,3 +35,4 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] add html scaffolding for navbar with root route navigation link
 - [x] add placeholder logo for navbar
 - [x] add placehold links for pages - About, Locations, and Activities
+- [x] setup application_controller#current_path method, use in layouts/application to apply styles conditionally

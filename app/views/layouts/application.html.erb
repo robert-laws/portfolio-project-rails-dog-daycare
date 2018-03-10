@@ -23,10 +23,10 @@
       </div>
       <div class="navbar-menu" id="navMenu">
         <div class="navbar-start">
-          <%= link_to 'Home', root_path, class: "navbar-item" %>
-          <%= link_to 'About', root_path, class: "navbar-item" %>
-          <%= link_to 'Locations', root_path, class: "navbar-item" %>
-          <%= link_to 'Activities', root_path, class: "navbar-item" %>
+          <%= link_to 'Home', root_path, class: "navbar-item #{'is-active' if current_path.nil?}" %>
+          <%= link_to 'About', root_path, class: "navbar-item #{'is-active' if current_path == 'about'}" %>
+          <%= link_to 'Locations', root_path, class: "navbar-item #{'is-active' if current_path == 'locations'}" %>
+          <%= link_to 'Activities', root_path, class: "navbar-item #{'is-active' if current_path == 'activities'}" %>
         </div>
 
         <div class="navbar-end">
