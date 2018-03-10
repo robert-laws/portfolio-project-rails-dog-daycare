@@ -14,16 +14,23 @@
   </div>
 
   <div class='field'>
-    <%= f.label :experience, class: 'label' %>
+    <%= f.label :email, class: 'label' %>
     <div class='control'>
-      <%= f.number_field :experience, class: 'input', placeholder: 'Experience in Years' %>
+      <%= f.text_field :email, class: 'input', placeholder: 'Email' %>
     </div>
   </div>
 
   <div class='field'>
-    <%= f.label :credits, class: 'label' %>
+    <%= f.label :first_name, class: 'label' %>
     <div class='control'>
-      <%= f.number_field :credits, class: 'input', placeholder: 'Credits in Whole Numbers' %>
+      <%= f.text_field :first_name, class: 'input', placeholder: 'First Name' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :last_name, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :last_name, class: 'input', placeholder: 'Last Name' %>
     </div>
   </div>
 

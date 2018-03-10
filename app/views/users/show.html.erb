@@ -3,17 +3,14 @@
 <h1 class="title">User Details</h1>
 
 <h4>
+  <%= @user.first_name %> <%= @user.last_name %>
+</h4>
+
+<h4>
   Username: <%= @user.username %>
 </h4>
 
 <p>
-  Experience: <%= @user.experience %>
+  Email: <%= @user.email %>
 </p>
 
-<p>
-  Credits Remaining: <%= @user.credits %>
-</p>
-
-<p>
-  Administrator? <%= @user.admin %>
-</p>
