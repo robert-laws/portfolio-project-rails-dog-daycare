@@ -70,3 +70,19 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] add link to sign in via github
 - [x] add controller logic to sessions controller to authenticate user and create a record in the users table
 - [x] test authenticate model
+
+## Phase 3
+
+### Completing the User Profile
+
+#### User Addresses
+
+- [ ] create a migration for an address table
+- [ ] address has fields street_1, street_2, city, state, zipcode, user_id
+- [ ] associate address with a user using a has_many relationship
+
+#### User Dogs
+
+- [ ] create a migration for a dog table
+- [ ] dog has fields name, breed, age, sex, user_id
+- [ ] associate dog with a use using a has_many relationship
