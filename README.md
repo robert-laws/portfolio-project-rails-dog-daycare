@@ -20,3 +20,16 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] setup Gemfile to include dev -> sqlite3 and prod -> pg
 - [x] push project to heroku -> [Heroku - Project Website - Rails Dog Daycare](https://rails-dog-daycare.herokuapp.com/)
 - [x] rename project on heroku
+
+### Asset Pipeline - Resources
+
+#### Bulma CSS Framework
+
+- [x] add bulma css to app
+- [ ] add font-awesome-rails gem to app
+- [ ] configure assets/stylesheets to use bulma and font-awesome
+
+#### Navigation - Bulma Navbar
+
+- [ ] add html scaffolding for navbar with root route navigation link
+- [ ] add placehold links for pages - About, Locations, and Activities
