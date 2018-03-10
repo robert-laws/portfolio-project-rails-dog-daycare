@@ -18,5 +18,5 @@ This repository includes all the work for my flatiron school portfolio project. 
 ### Heroku Integration
 
 - [x] setup Gemfile to include dev -> sqlite3 and prod -> pg
-- [ ] push project to heroku
-- [ ] rename project on heroku
+- [x] push project to heroku -> [Heroku - Project Website - Rails Dog Daycare](https://rails-dog-daycare.herokuapp.com/)
+- [x] rename project on heroku
