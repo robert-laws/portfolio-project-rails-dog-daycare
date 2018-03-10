@@ -26,10 +26,12 @@ This repository includes all the work for my flatiron school portfolio project. 
 #### Bulma CSS Framework
 
 - [x] add bulma css to app
-- [ ] add font-awesome-rails gem to app
+- [x] add font-awesome-rails gem to app
 - [ ] configure assets/stylesheets to use bulma and font-awesome
+- [ ] update layouts/application to use bulma
 
 #### Navigation - Bulma Navbar
 
 - [ ] add html scaffolding for navbar with root route navigation link
+- [ ] add placeholder logo for navbar
 - [ ] add placehold links for pages - About, Locations, and Activities
