@@ -13,7 +13,7 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] initialize new rails app - portfolio-project-rails-dog-daycare
 - [x] push repo to github
 - [x] create static_controller and home.html.erb - as root
-- [ ] setup layouts/application to yield to page titles set on views
+- [x] setup layouts/application and application_helper to yield to custom page titles provided by views
 
 ### Heroku Integration
 
