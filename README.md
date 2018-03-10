@@ -64,9 +64,9 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 ### Omniauth Integration
 
-- [ ] update Gemfile with omniauth and omniauth-github
-- [ ] setup oauth with github
-- [ ] add omniauth file in initializers
-- [ ] add link to sign in via github
-- [ ] add controller logic to sessions controller to authenticate user and create a record in the users table
-- [ ] test authenticate model
+- [x] update Gemfile with omniauth and omniauth-github
+- [x] setup oauth with github
+- [x] add omniauth file in initializers
+- [x] add link to sign in via github
+- [x] add controller logic to sessions controller to authenticate user and create a record in the users table
+- [x] test authenticate model

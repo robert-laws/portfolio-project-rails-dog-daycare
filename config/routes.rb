@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/sessions/create', to: 'sessions#create'
   get '/signup', to: 'users#new', as: 'new_user'
   delete '/signout', to: 'sessions#destroy'
+  get '/auth/:provider/callback', to: 'sessions#create'
 
   # users
   resources :users, only: [:index, :show, :new, :create, :edit, :update]
