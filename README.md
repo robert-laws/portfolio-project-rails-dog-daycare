@@ -17,6 +17,6 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 ### Heroku Integration
 
-- [ ] setup Gemfile to include dev -> sqlite3 and prod -> pg
+- [x] setup Gemfile to include dev -> sqlite3 and prod -> pg
 - [ ] push project to heroku
 - [ ] rename project on heroku
