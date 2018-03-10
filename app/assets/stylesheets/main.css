@@ -1,5 +1,12 @@
 /** Update Bulma Classes **/
 
 .section {
-  padding: 1.5rem
+  padding: 2rem
+}
+
+/** Navigation Overrides **/
+
+a.navbar-item.is-active {
+  font-weight: bold;
+  color: #19a !important; 
 }
