@@ -10,3 +10,9 @@ a.navbar-item.is-active {
   font-weight: bold;
   color: #19a !important; 
 }
+
+/** Flash Notices **/
+
+.flash-div {
+  margin-bottom: 1.2em;
+}
