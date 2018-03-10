@@ -41,8 +41,8 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 ### Users
 
-- [ ] create model and migration for users
-- [ ] add fields first_name, last_name, email, username, and password_digest
+- [x] create model and migration for users
+- [x] add fields first_name, last_name, email, username, and password_digest
 - [ ] add bcrypt gem to Gemfile
 - [ ] add has_secure_password to model
 - [ ] test model by add seed data for creating users
