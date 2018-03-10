@@ -49,8 +49,8 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 ### Basic Authentication
 
-- [ ] create sessions controller
-- [ ] add new, create, and destroy methods
+- [x] create sessions controller
+- [x] add new, create, and destroy methods
 - [ ] add logic to authenticate users and add a session variable
 - [ ] update application controller to include a current_user method
 - [ ] update navigation to inlcude sign in, sign up, and logout buttons
