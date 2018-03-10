@@ -1,15 +1,6 @@
 <% flash.each do |name, message| %>
-  <% if name == 'alert' %>
-    <div>
-      <%= message %>
-    </div>
-  <% elsif name == 'notice' %>
-    <div>
-      <%= message %>
-    </div>
-  <% else %>
-    <div>
-      <%= message %>
-    </div>
-  <% end %>
+  <div class="notification <%= if name == 'alert' ? 'is-danger' : 'is-success' %>">
+    <button class="delete" onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;'></button>
+    <%= message %>
+  </div>
 <% end %>

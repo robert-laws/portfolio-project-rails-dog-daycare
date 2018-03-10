@@ -59,6 +59,7 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] add basic validations for user model
 - [x] add error messages for views
 - [x] add flash for alerts and notifications
+- [x] add column for admin in users table
 
 ### Omniauth Integration
 
