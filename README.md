@@ -77,14 +77,14 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 #### User Addresses
 
-- [ ] create a migration for an address table
-- [ ] address has fields street_1, street_2, city, state, zipcode, user_id
+- [x] create a migration for an address table
+- [x] address has fields street_1, street_2, city, state, zipcode, user_id
 - [ ] associate address with a user using a has_many relationship
 
 #### User Dogs
 
-- [ ] create a migration for a dog table
-- [ ] dog has fields name, breed, age, sex, user_id
+- [x] create a migration for a dog table
+- [x] dog has fields name, breed, age, sex, user_id
 - [ ] associate dog with a use using a has_many relationship
 
 #### Add Logic to Require Users to Complete Profile
