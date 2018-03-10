@@ -31,7 +31,24 @@
 
         <div class="navbar-end">
           <div class="navbar-item">
-            <!-- to do -->
+            <div class="field is-grouped">
+              <% if current_user %>
+                <p class="control">
+                  <%= link_to "Log Out", signout_path, method: :delete, class: 'button is-info' %>
+                </p>
+              <% else %>
+                <p class="control">
+                  <a href="<%= new_user_path %>" class="button is-info">
+                    <span>Sign Up</span>
+                  </a>
+                </p>
+                <p class="control">
+                  <a href="<%= signin_path %>" class="button is-info">
+                    <span>Sign In</span>
+                  </a>
+                </p>              
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

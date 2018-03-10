@@ -53,8 +53,11 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] add new, create, and destroy methods
 - [x] add routes for users and sessions
 - [x] add logic to authenticate users and add a session variable
-- [ ] update application controller to include a current_user method
-- [ ] update navigation to inlcude sign in, sign up, and logout buttons
+- [x] update application controller to include a current_user method
+- [x] update navigation to inlcude sign in, sign up, and logout buttons
+- [ ] add validations for user model
+- [ ] add error messages for views
+- [ ] add flash for alerts and notifications
 
 ### Omniauth Integration
 
@@ -63,7 +66,4 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [ ] add omniauth file in initializers
 - [ ] add link to sign in via github
 - [ ] add controller logic to sessions controller to authenticate user and create a record in the users table
-- [ ] add validations for user model
-- [ ] add error messages for views
-- [ ] add flash for alerts and notifications
 - [ ] test authenticate model
