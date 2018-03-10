@@ -11,7 +11,7 @@ This repository includes all the work for my flatiron school portfolio project. 
 ### Initial Setup
 
 - [x] initialize new rails app - portfolio-project-rails-dog-daycare
-- [ ] push repo to github
+- [x] push repo to github
 - [ ] create static_controller and home.html.erb - as root
 
 ### Heroku Integration
