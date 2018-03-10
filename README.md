@@ -60,6 +60,7 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] add error messages for views
 - [x] add flash for alerts and notifications
 - [x] add column for admin in users table
+- [x] add require_permission helper method to protect against viewing another user's content
 
 ### Omniauth Integration
 
