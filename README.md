@@ -56,9 +56,9 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] update application controller to include a current_user method
 - [x] update navigation to inlcude sign in, sign up, and logout buttons
 - [x] add views for users and sessions
-- [ ] add validations for user model
-- [ ] add error messages for views
-- [ ] add flash for alerts and notifications
+- [x] add basic validations for user model
+- [x] add error messages for views
+- [x] add flash for alerts and notifications
 
 ### Omniauth Integration
 
