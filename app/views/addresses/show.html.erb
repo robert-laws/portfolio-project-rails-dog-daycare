@@ -1,2 +1,20 @@
-<h1>Addresses#show</h1>
-<p>Find me in app/views/addresses/show.html.erb</p>
+<%= render 'shared/flash' %>
+
+<h1 class="title">Address Details</h1>
+
+<div class='tile is-ancestor'>
+  <div class='tile is-parent'>
+    <article class='tile is-child box'>
+      <h4 class='title'>Address</h4>
+      <p><strong>Street:</strong> <%= @address.street_1 %></p>
+      <% if @address.street_2.present? %>
+        <p><strong>Street:</strong> <%= @address.street_2 %></p>
+      <% end %>
+      <p><strong>City:</strong> <%= @address.city %></p>
+      <p><strong>State:</strong> <%= @address.state %></p>
+      <p><strong>Zip Code:</strong> <%= @address.zip_code %></p>
+      <hr>
+      <p><%= link_to 'Edit Address Details', edit_user_address_path(@address.user, @address) %></p>
+    </article>
+  </div>
+</div>
