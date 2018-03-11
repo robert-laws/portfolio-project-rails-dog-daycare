@@ -6,12 +6,17 @@ class UsersController < ApplicationController
   end
 
   def show
-
     @user = User.find(params[:id])
   end
 
   def edit
     @user = User.find(params[:id])
+    @number = params["dog_count"].to_i
+    @profile_edit = session[:profile]
+    if @profile_edit && @number > 0
+      @addresses = @user.addresses.build
+      @dogs = @number.times { @user.dogs.build }
+    end
   end
 
   def new
