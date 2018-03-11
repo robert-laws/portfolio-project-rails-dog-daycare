@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   # users
   resources :users, only: [:index, :show, :new, :create, :edit, :update] do
-    resources :addresses, only: [:show, :edit, :update]
+    resources :addresses, only: [:show, :edit]
   end
+
+  resources :addresses, only: [:update]
 end

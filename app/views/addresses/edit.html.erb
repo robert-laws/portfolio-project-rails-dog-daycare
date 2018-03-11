@@ -1,2 +1,46 @@
-<h1>Addresses#edit</h1>
-<p>Find me in app/views/addresses/edit.html.erb</p>
+<h1 class="title">Edit Address Form</h1>
+
+<%= render partial: 'shared/form_errors', object: @address, as: 'obj' %>
+
+<%= form_for @address do |f| %>
+  <div class='field'>
+    <%= f.label :street_1, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :street_1, class: 'input', placeholder: 'Street' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :street_2, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :street_2, class: 'input', placeholder: 'Street' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :city, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :city, class: 'input', placeholder: 'City' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :state, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :state, class: 'input', placeholder: 'State' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :zip_code, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :zip_code, class: 'input', placeholder: 'Zip Code' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.submit 'Update Address', class: 'button is-info' %>
+    </div>
+  </div>  
+<% end %>

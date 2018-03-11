@@ -24,7 +24,7 @@
         <p><strong>State:</strong> <%= address.state %></p>
         <p><strong>Zip Code:</strong> <%= address.zip_code %></p>
         <hr>
-        <p><%= link_to 'View Address Details', user_address_path(@user, address) %></p>
+        <p><%= link_to 'Edit Address Details', edit_user_address_path(@user, address) %></p>
       </article>
     <% end %>
   </div>
