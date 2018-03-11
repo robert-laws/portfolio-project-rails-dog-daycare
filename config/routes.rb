@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'addresses/show'
+
+  get 'addresses/edit'
+
   # root
   root 'static#home'
 

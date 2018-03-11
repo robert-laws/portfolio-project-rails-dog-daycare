@@ -112,7 +112,7 @@ This repository includes all the work for my flatiron school portfolio project. 
 #### Nesting for Addresses within Users
 
 - [x] update routes to include nested addresses
-- [ ] add addresses_controller with edit view
+- [x] add addresses_controller with show and edit view
 - [ ] add logic for edit and update in addresses_controller
 - [ ] update individual address content and redirect to user#show
 
