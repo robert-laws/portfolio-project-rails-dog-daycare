@@ -120,7 +120,7 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 - [x] update routes to include nested dogs
 - [x] add dogs_controller with edit view
-- [ ] add logic for edit and update in dogs_controller
+- [x] add logic for edit and update in dogs_controller
 - [ ] update individual dog content and redirect to user#show
 
 #### to do...

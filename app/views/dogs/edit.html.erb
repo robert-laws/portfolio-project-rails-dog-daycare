@@ -1,2 +1,39 @@
-<h1>Dogs#edit</h1>
-<p>Find me in app/views/dogs/edit.html.erb</p>
+<h1 class="title">Edit Dog Form</h1>
+
+<%= render partial: 'shared/form_errors', object: @dog, as: 'obj' %>
+
+<%= form_for [@user, @dog] do |f| %>
+  <div class='field'>
+    <%= f.label :name, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :name, class: 'input', placeholder: 'Name' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :breed, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :breed, class: 'input', placeholder: 'Breed' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :age, class: 'label' %>
+    <div class='control'>
+      <%= f.number_field :age, class: 'input', placeholder: 'Age' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :sex, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :sex, class: 'input', placeholder: 'Sex' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.submit 'Update Dog', class: 'button is-info' %>
+    </div>
+  </div>
+<% end %>

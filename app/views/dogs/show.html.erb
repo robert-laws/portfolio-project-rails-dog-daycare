@@ -1,2 +1,17 @@
-<h1>Dogs#show</h1>
-<p>Find me in app/views/dogs/show.html.erb</p>
+<%= render 'shared/flash' %>
+
+<h1 class="title">Dog Details</h1>
+
+<div class='tile is-ancestor'>
+  <div class='tile is-parent'>
+    <article class='tile is-child box'>
+      <h4 class='title'>Dog</h4>
+      <p><strong>Name:</strong> <%= @dog.street_1 %></p>
+      <p><strong>Breed:</strong> <%= @dog.breed %></p>
+      <p><strong>Age:</strong> <%= @dog.age %></p>
+      <p><strong>Sex:</strong> <%= @dog.sex %></p>
+      <hr>
+      <p><%= link_to 'Edit Dog Details', edit_user_dog_path(@dog.user, @dog) %></p>
+    </article>
+  </div>
+</div>
