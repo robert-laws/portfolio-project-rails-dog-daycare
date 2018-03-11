@@ -57,14 +57,21 @@
       </div>
     </nav>
 
-
-    <section class="section">
-      <div class="container">
-        <%= yield %>
-      </div>
-    </section>
-
-
+    <% if current_path.nil? %>
+      <section class="hero is-primary is-medium">
+        <div class="hero-body">
+          <div class="container">
+            <%= yield %>
+          </div>
+        </div>
+      </section>
+    <% else %>
+      <section class="section">
+        <div class="container">
+          <%= yield %>
+        </div>
+      </section>
+    <% end %>
 
   </body>
 </html>
