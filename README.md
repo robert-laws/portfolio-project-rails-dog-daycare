@@ -119,7 +119,7 @@ This repository includes all the work for my flatiron school portfolio project. 
 #### Nesting for Dogs within Users
 
 - [x] update routes to include nested dogs
-- [ ] add dogs_controller with edit view
+- [x] add dogs_controller with edit view
 - [ ] add logic for edit and update in dogs_controller
 - [ ] update individual dog content and redirect to user#show
 

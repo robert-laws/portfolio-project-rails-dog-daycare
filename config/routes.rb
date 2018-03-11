@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'dogs/show'
+
+  get 'dogs/edit'
+
   get 'addresses/show'
 
   get 'addresses/edit'
