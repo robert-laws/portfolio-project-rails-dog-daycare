@@ -16,7 +16,12 @@ Rails.application.routes.draw do
   # users
   resources :users, only: [:index, :show, :new, :create, :edit, :update] do
     resources :addresses, only: [:show, :edit, :update]
+    resources :dogs, only: [:show, :edit, :update]
   end
 
+  # addresses
   resources :addresses, only: [:update]
+
+  # dogs
+  resources :dogs, only: [:update]
 end
