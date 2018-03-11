@@ -109,4 +109,20 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 ### Editing Nested Addresses and Dogs Data
 
+#### Nesting for Addresses within Users
+
+- [x] update routes to include nested addresses
+- [ ] add addresses_controller with edit view
+- [ ] add logic for edit and update in addresses_controller
+- [ ] update individual address content and redirect to user#show
+
+#### Nesting for Dogs within Users
+
+- [ ] update routes to include nested dogs
+- [ ] add dogs_controller with edit view
+- [ ] add logic for edit and update in dogs_controller
+- [ ] update individual dog content and redirect to user#show
+
+#### to do...
+
 - [ ] add logic to allow edits for individual user information and associations
