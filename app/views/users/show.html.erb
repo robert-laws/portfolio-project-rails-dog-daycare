@@ -2,19 +2,19 @@
 
 <h1 class="title">User Details</h1>
 
-<div class='tile is-ancestor'>
-  <div class='tile is-parent'>
-    <article class='tile is-child box'>
+<div class='columns'>
+  <div class='column'>
+    <article class='box'>
       <h4 class='title'><%= @user.first_name %> <%= @user.last_name %></h4>
       <p><strong>Username:</strong> <%= @user.username %></p>
       <p><strong>Email:</strong> <%= @user.email %></p>
     </article>
   </div>
 </div>
-<div class='tile is-ancestor'>
-  <div class='tile is-parent'>
+<div class='columns'>
+  <div class='column'>
     <% @addresses.each do |address| %>
-      <article class='tile is-child box'>
+      <article class='box'>
         <h4 class='title'>Address</h4>
         <p><strong>Street:</strong> <%= address.street_1 %></p>
         <% if address.street_2.present? %>
@@ -29,10 +29,10 @@
     <% end %>
   </div>
 </div>
-<div class='tile is-ancestor'>
+<div class='columns'>
   <% @dogs.each do |dog| %>
-    <div class='tile is-parent'>
-      <article class='tile is-child box'>
+    <div class='column'>
+      <article class='box'>
         <h4 class='title'><%= dog.name %></h4>
         <p><strong>Name:</strong> <%= dog.breed %></p>
         <p><strong>Name:</strong> <%= dog.age %></p>

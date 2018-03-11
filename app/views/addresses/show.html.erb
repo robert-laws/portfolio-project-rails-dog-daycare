@@ -2,9 +2,9 @@
 
 <h1 class="title">Address Details</h1>
 
-<div class='tile is-ancestor'>
-  <div class='tile is-parent'>
-    <article class='tile is-child box'>
+<div class='columns'>
+  <div class='column'>
+    <article class='box'>
       <h4 class='title'>Address</h4>
       <p><strong>Street:</strong> <%= @address.street_1 %></p>
       <% if @address.street_2.present? %>
