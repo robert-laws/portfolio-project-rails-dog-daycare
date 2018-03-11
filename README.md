@@ -104,4 +104,9 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] add user accepts nested attribtues for addresses and dogs in user model
 - [x] customize users/edit view to prompt user to select the number of dogs to add to their profile
 - [x] add methods in user model for nested attributes
+- [x] update navigation to show 'Your Profile' for logged in user
+- [x] display user address and dog information on user profile page
+
+### Editing Nested Addresses and Dogs Data
+
 - [ ] add logic to allow edits for individual user information and associations

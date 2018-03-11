@@ -2,15 +2,45 @@
 
 <h1 class="title">User Details</h1>
 
-<h4>
-  <%= @user.first_name %> <%= @user.last_name %>
-</h4>
+<div class='tile is-ancestor'>
+  <div class='tile is-parent'>
+    <article class='tile is-child box'>
+      <h4 class='title'><%= @user.first_name %> <%= @user.last_name %></h4>
+      <p><strong>Username:</strong> <%= @user.username %></p>
+      <p><strong>Email:</strong> <%= @user.email %></p>
+    </article>
+  </div>
+</div>
+<div class='tile is-ancestor'>
+  <div class='tile is-parent'>
+    <% @addresses.each do |address| %>
+      <article class='tile is-child box'>
+        <h4 class='title'>Address</h4>
+        <p><strong>Street:</strong> <%= address.street_1 %></p>
+        <% if address.street_2.present? %>
+          <p><strong>Street:</strong> <%= address.street_2 %></p>
+        <% end %>
+        <p><strong>City:</strong> <%= address.city %></p>
+        <p><strong>State:</strong> <%= address.state %></p>
+        <p><strong>Zip Code:</strong> <%= address.zip_code %></p>
+      </article>
+    <% end %>
+  </div>
+</div>
+<div class='tile is-ancestor'>
+  <% @dogs.each do |dog| %>
+    <div class='tile is-parent'>
+      <article class='tile is-child box'>
+        <h4 class='title'><%= dog.name %></h4>
+        <p><strong>Name:</strong> <%= dog.breed %></p>
+        <p><strong>Name:</strong> <%= dog.age %></p>
+        <p><strong>Name:</strong> <%= dog.sex %></p>
+      </article>
+    </div>
+  <% end %>
+</div>
 
-<h4>
-  Username: <%= @user.username %>
-</h4>
 
-<p>
-  Email: <%= @user.email %>
-</p>
+
+
 
