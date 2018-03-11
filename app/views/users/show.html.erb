@@ -10,6 +10,11 @@
       <p><strong>Email:</strong> <%= @user.email %></p>
     </article>
   </div>
+  <div class="column is-one-third">
+    <article class='box'>
+      <%= link_to 'Add a New Dog', new_user_dog_path(@user) %>
+    </article>
+  </div>
 </div>
 <div class='columns'>
   <div class='column'>
@@ -39,6 +44,7 @@
         <p><strong>Name:</strong> <%= dog.sex %></p>
         <hr>
         <p><%= link_to 'Edit Dog Details', edit_user_dog_path(@user, dog) %></p>
+        <p><%= link_to 'Remove this Dog', dog, method: :delete, data: { confirm: "Are you sure?" } %></p>
       </article>
     </div>
   <% end %>

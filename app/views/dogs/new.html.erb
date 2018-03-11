@@ -1,0 +1,5 @@
+<h1 class="title">New Dog Form</h1>
+
+<%= render partial: 'shared/form_errors', object: @dog, as: 'obj' %>
+
+<%= render partial: 'form', locals: { submit_text: "Add Dog to Account" } %>

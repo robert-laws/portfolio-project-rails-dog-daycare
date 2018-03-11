@@ -15,6 +15,28 @@ class DogsController < ApplicationController
     end
   end
 
+  def new
+    if params[:user_id]
+      @user = User.find(params[:user_id])
+      if current_user != @user
+        redirect_to root_path
+      else
+        @dog = @user.dogs.new
+      end
+    else
+      redirect_to root_path
+    end
+  end
+
+  def create
+    @dog = Dog.new(dog_params)
+    if @dog.save
+      redirect_to user_path(@dog.user), notice: "New dog successfully added to your account"
+    else
+      render :new
+    end
+  end
+
   def edit
     if params[:user_id]
       @user = User.find(params[:user_id])
@@ -40,9 +62,14 @@ class DogsController < ApplicationController
     end
   end
 
+  def destroy
+    Dog.find(params[:id]).destroy
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def dog_params
-    params.require(:dog).permit(:name, :breed, :age, :sex)
+    params.require(:dog).permit(:name, :breed, :age, :sex, :user_id)
   end
 end

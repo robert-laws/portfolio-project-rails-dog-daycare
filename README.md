@@ -125,8 +125,9 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 #### Add or Remove a Dog from the User account
 
-- [ ] add feature to add a new dog to an user
-- [ ] add feature to remove an existing dog from a user
+- [x] add feature to add a new dog to an user
+- [x] add feature to remove an existing dog from a user
+- [x] use a partial to render the form for the new and edit views
 
 ## Phase 4
 
