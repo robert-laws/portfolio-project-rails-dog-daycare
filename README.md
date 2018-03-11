@@ -100,7 +100,7 @@ This repository includes all the work for my flatiron school portfolio project. 
 #### Setting up the Form Associations
 
 - [x] add form fields for address and dog(s)
-- [ ] update user_params to include address and dog fields
+- [x] update user_params to include address and dog fields
 - [ ] add user accepts nested attribtues for addresses and dogs in user model
 - [ ] add methods in user model for nested attributes
 - [ ] add logic to allow edits for individual user information and associations
