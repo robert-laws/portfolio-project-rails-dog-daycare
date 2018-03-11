@@ -123,6 +123,11 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] add logic for edit and update in dogs_controller
 - [x] update individual dog content and redirect to user#show
 
-#### to do...
+#### Add or Remove a Dog from the User account
 
-- [ ] add logic to allow edits for individual user information and associations
+- [ ] add feature to add a new dog to an user
+- [ ] add feature to remove an existing dog from a user
+
+## Phase 4
+
+### Locations and Activities
