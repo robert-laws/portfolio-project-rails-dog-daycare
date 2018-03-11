@@ -121,6 +121,7 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] update routes to include nested dogs
 - [x] add dogs_controller with edit view
 - [x] add logic for edit and update in dogs_controller
+- [x] add select control and validations for dog sex column
 - [x] update individual dog content and redirect to user#show
 
 #### Add or Remove a Dog from the User account

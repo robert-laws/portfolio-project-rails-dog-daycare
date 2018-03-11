@@ -24,8 +24,8 @@
 
   <div class='field'>
     <%= f.label :sex, class: 'label' %>
-    <div class='control'>
-      <%= f.text_field :sex, class: 'input', placeholder: 'Sex' %>
+    <div class='select'>
+      <%= f.select :sex, [['male', 'male'], ['female', 'female']], { include_blank: 'select a sex' } %>
     </div>
   </div>
 
