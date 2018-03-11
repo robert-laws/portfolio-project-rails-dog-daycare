@@ -43,6 +43,79 @@
     </div>
   </div>
 
+  <%= f.fields_for(:addresses) do |address_fields| %>
+    <h5>User Address</h5>
+    <%= address_fields.hidden_field :id %>
+
+    <div class='field'>
+      <%= address_fields.label :street_1, class: 'label' %>
+      <div class='control'>
+        <%= address_fields.text_field :street_1, class: 'input', placeholder: 'Street' %>
+      </div>
+    </div>
+
+    <div class='field'>
+      <%= address_fields.label :street_2, class: 'label' %>
+      <div class='control'>
+        <%= address_fields.text_field :street_2, class: 'input', placeholder: 'Street' %>
+      </div>
+    </div>
+
+    <div class='field'>
+      <%= address_fields.label :city, class: 'label' %>
+      <div class='control'>
+        <%= address_fields.text_field :city, class: 'input', placeholder: 'City' %>
+      </div>
+    </div>
+
+    <div class='field'>
+      <%= address_fields.label :state, class: 'label' %>
+      <div class='control'>
+        <%= address_fields.text_field :state, class: 'input', placeholder: 'State' %>
+      </div>
+    </div>
+
+    <div class='field'>
+      <%= address_fields.label :zip_code, class: 'label' %>
+      <div class='control'>
+        <%= address_fields.text_field :zip_code, class: 'input', placeholder: 'Zip Code' %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= f.fields_for(:dogs) do |dog_fields| %>
+    <h5>Dog # <%= dog_fields.index + 1 %></h5>
+    <%= dog_fields.hidden_field :id %>
+
+    <div class='field'>
+      <%= dog_fields.label :name, class: 'label' %>
+      <div class='control'>
+        <%= dog_fields.text_field :name, class: 'input', placeholder: 'Name' %>
+      </div>
+    </div>
+
+    <div class='field'>
+      <%= dog_fields.label :breed, class: 'label' %>
+      <div class='control'>
+        <%= dog_fields.text_field :breed, class: 'input', placeholder: 'Breed' %>
+      </div>
+    </div>
+
+    <div class='field'>
+      <%= dog_fields.label :age, class: 'label' %>
+      <div class='control'>
+        <%= dog_fields.number_field :age, class: 'input', placeholder: 'Age' %>
+      </div>
+    </div>
+
+    <div class='field'>
+      <%= dog_fields.label :sex, class: 'label' %>
+      <div class='control'>
+        <%= dog_fields.text_field :sex, class: 'input', placeholder: 'Sex' %>
+      </div>
+    </div>
+  <% end %>
+
   <div class="field">
     <div class="control">
       <%= f.submit submit_text, class: 'button is-info' %>
