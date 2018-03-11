@@ -2,7 +2,7 @@
 
 <%= render partial: 'shared/form_errors', object: @address, as: 'obj' %>
 
-<%= form_for @address do |f| %>
+<%= form_for [@user, @address] do |f| %>
   <div class='field'>
     <%= f.label :street_1, class: 'label' %>
     <div class='control'>

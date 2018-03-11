@@ -28,7 +28,7 @@
           <%= link_to 'Locations', root_path, class: "navbar-item #{'is-active' if current_path == 'locations'}" %>
           <%= link_to 'Activities', root_path, class: "navbar-item #{'is-active' if current_path == 'activities'}" %>
           <% if current_user %>
-            <%= link_to 'Your Profile', user_path(current_user.id), class: "navbar-item #{'is-active' if current_path == 'users'}" %>
+            <%= link_to 'Your Profile', user_path(current_user.id), class: "navbar-item #{'is-active' if current_path == 'users' }" %>
           <% end %>
         </div>
 

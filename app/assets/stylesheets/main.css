@@ -16,3 +16,22 @@ a.navbar-item.is-active {
 .flash-div {
   margin-bottom: 1.2em;
 }
+
+/** Error Classes **/
+
+#errors_explanation {
+  margin-bottom: 1.2em;
+}
+
+#errors_explanation ul {
+  margin: 0px 0px 6px 16px;
+}
+
+#errors_explanation ul li {
+  padding: 0px 0px 4px;
+}
+
+.field_with_errors input {
+  border: 1px solid red;
+  margin-top: 10px;
+}

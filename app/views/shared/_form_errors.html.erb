@@ -1,12 +1,15 @@
 <% if obj.errors.any? %>
   <div id="errors_explanation">
-    <h5>
+    <h5 class="title is-5">
       <%= pluralize(obj.errors.count, "error") %> 
       prevented the user account from being saved.
     </h5>
     <ul>
       <% obj.errors.full_messages.each do |message| %>
         <li>
+          <span class="icon has-text-danger">
+            <%= fa_icon "ban" %>
+          </span>
           <%= message %>
         </li>
       <% end %>
