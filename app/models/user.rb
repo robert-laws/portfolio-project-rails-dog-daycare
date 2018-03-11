@@ -4,8 +4,10 @@ class User < ApplicationRecord
   has_many :addresses, dependent: :destroy
   has_many :dogs, dependent: :destroy
 
+  accepts_nested_attributes_for :addresses
+  accepts_nested_attributes_for :dogs
+
   validates :username, presence: true
-  # validates :password, presence: true
 
   def self.find_or_create_by_omniauth(auth_hash)
     oauth_email = auth_hash["info"]["email"]

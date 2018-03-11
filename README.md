@@ -101,6 +101,7 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 - [x] add form fields for address and dog(s)
 - [x] update user_params to include address and dog fields
-- [ ] add user accepts nested attribtues for addresses and dogs in user model
+- [x] add user accepts nested attribtues for addresses and dogs in user model
+- [ ] customize users/edit view to prompt user to select the number of dogs to add to their profile
 - [ ] add methods in user model for nested attributes
 - [ ] add logic to allow edits for individual user information and associations
