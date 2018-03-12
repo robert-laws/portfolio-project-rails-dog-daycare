@@ -141,13 +141,13 @@ This repository includes all the work for my flatiron school portfolio project. 
 ### Activities
 
 - [x] create model and migration for activity
-- [x] add fields name, description, ideal_size, ideal_type, energy_usage
+- [x] add fields name, description, best_for_size, best_for_type, energy_usage, custom
 - [ ] add controller for activities
 
 ### Location_Activities
 
 - [x] create model and migration for location_activity
 - [x] confirm relationships in model belongs_to location and activities
-- [ ] add seeds for locations and activities
+- [x] add seeds for locations and activities
 
 ### Features
