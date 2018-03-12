@@ -46,5 +46,5 @@ a.navbar-item.is-active {
 /** Wrapping -> Box Min-Height **/
 
 .wrapping > .column > .box {
-  min-height: 280px;
+  min-height: 380px;
 }

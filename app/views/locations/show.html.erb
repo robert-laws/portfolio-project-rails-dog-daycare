@@ -10,6 +10,11 @@
       <p><strong>Capacity:</strong> <%= @location.capacity %></p>
       <p><strong>Size:</strong> <%= @location.size %></p>
       <p><strong>Size:</strong> <%= @location.open_year %></p>
+      <hr>
+      <p class="title is-6">Activities available at <%= @location.name %></p>
+      <% @location.activities.each do |activity| %>
+        <p><%= link_to activity.name, location_activity_path(@location, activity) %></p>
+      <% end %>
     </article>
   </div>
 </div>

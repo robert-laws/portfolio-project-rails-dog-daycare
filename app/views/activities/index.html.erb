@@ -1,10 +1,18 @@
+<%= render 'shared/flash' %>
+
 <h1 class="title">All Activities</h1>
 
 <div class="columns is-multiline wrapping">
   <% @activities.each do |activity| %>
     <div class="column is-one-third">
       <div class="box">
-        <p class="title is-4"><%= link_to activity.name, activity_path(activity) %></p>
+        <p class="title is-4">
+          <% if @location %>
+            <%= link_to activity.name, location_activity_path(@location, activity) %>
+          <% else %>
+            <%= link_to activity.name, activity_path(activity) %>
+          <% end %>
+        </p>
         <p><strong>Description:</strong> <%= activity.description %></p>
         <p><strong>Best for Size:</strong> <%= activity.best_for_size %></p>
         <p><strong>Best for Type:</strong> <%= activity.best_for_type %></p>
