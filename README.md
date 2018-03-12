@@ -154,5 +154,18 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 - [x] add routes and navigation link for locations and activities
 - [x] add index and show actions/views for locations
-- [ ] add nested resources for locations that have associated activities
-- [ ] add index and show actions/views for activities (nested and un-nested)
+- [x] add nested resources for locations that have associated activities
+- [x] add index and show actions/views for activities (nested and un-nested)
+
+#### Adding New Locations
+
+- [ ] add new view and controller new and create action for location
+- [ ] build collection_select in form to select existing activities to add to location
+- [ ] add edit view and controller edit and update action for location
+- [ ] add destroy controller action for location
+
+#### Adding New Activity
+
+- [ ] add new view and controller action for activity
+- [ ] add edit view and controller action for activity
+- [ ] add destroy controller action for activity
