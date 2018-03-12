@@ -1,2 +1,16 @@
-<h1>Activities#show</h1>
-<p>Find me in app/views/activities/show.html.erb</p>
+<%= render 'shared/flash' %>
+
+<h1 class="title">Activity Details</h1>
+
+<div class='columns'>
+  <div class='column'>
+    <article class='box'>
+      <p class="title is-4"><%= @activity.name %></p>
+      <p><strong>Description:</strong> <%= @activity.description %></p>
+      <p><strong>Best for Size:</strong> <%= @activity.best_for_size %></p>
+      <p><strong>Best for Type:</strong> <%= @activity.best_for_type %></p>
+      <p><strong>Energy Usage:</strong> <%= @activity.energy_usage %></p>
+      <p><strong>Custom:</strong> <%= @activity.custom %></p>
+    </article>
+  </div>
+</div>

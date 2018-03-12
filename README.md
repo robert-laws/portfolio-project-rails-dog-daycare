@@ -153,6 +153,6 @@ This repository includes all the work for my flatiron school portfolio project. 
 ### Features
 
 - [x] add routes and navigation link for locations and activities
-- [ ] add index and show actions/views for locations
+- [x] add index and show actions/views for locations
 - [ ] add nested resources for locations that have associated activities
 - [ ] add index and show actions/views for activities (nested and un-nested)

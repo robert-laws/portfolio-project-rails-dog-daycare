@@ -1,2 +1,15 @@
-<h1>Locations#show</h1>
-<p>Find me in app/views/locations/show.html.erb</p>
+<%= render 'shared/flash' %>
+
+<h1 class="title">Location Details</h1>
+
+<div class='columns'>
+  <div class='column'>
+    <article class='box'>
+      <p class="title is-4"><%= @location.name %></p>
+      <p><strong>City:</strong> <%= @location.city %></p>
+      <p><strong>Capacity:</strong> <%= @location.capacity %></p>
+      <p><strong>Size:</strong> <%= @location.size %></p>
+      <p><strong>Size:</strong> <%= @location.open_year %></p>
+    </article>
+  </div>
+</div>
