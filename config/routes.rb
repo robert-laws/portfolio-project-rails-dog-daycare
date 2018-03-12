@@ -1,20 +1,4 @@
 Rails.application.routes.draw do
-  get 'activities/index'
-
-  get 'activities/show'
-
-  get 'locations/index'
-
-  get 'locations/show'
-
-  get 'dogs/show'
-
-  get 'dogs/edit'
-
-  get 'addresses/show'
-
-  get 'addresses/edit'
-
   # root
   root 'static#home'
 
@@ -36,4 +20,10 @@ Rails.application.routes.draw do
 
   # dogs
   resources :dogs, only: [:create, :update, :destroy]
+
+  # locations
+  resources :locations, only: [:index, :show]
+
+  # activities
+  resources :activities, only: [:index, :show]
 end
