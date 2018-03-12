@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310164759) do
+ActiveRecord::Schema.define(version: 20180312094642) do
+
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "ideal_size"
+    t.string "ideal_type"
+    t.string "energy_usage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "addresses", force: :cascade do |t|
     t.string "street_1"
@@ -33,6 +43,25 @@ ActiveRecord::Schema.define(version: 20180310164759) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_dogs_on_user_id"
+  end
+
+  create_table "location_activities", force: :cascade do |t|
+    t.integer "location_id"
+    t.integer "activity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_location_activities_on_activity_id"
+    t.index ["location_id"], name: "index_location_activities_on_location_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.integer "capacity"
+    t.integer "size"
+    t.integer "open_year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

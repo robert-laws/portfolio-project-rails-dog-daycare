@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  city: 
+  capacity: 
+  size: 
+  open_year: 1
+
+two:
+  name: 
+  city: 
+  capacity: 
+  size: 
+  open_year: 1
