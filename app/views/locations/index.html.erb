@@ -2,6 +2,10 @@
 
 <h1 class="title">All Locations</h1>
 
+<%= render partial: 'users/user_type' %>
+
+<%= render partial: 'users/user_functions', locals: { user: current_user } %>
+
 <div class="columns is-multiline wrapping">
   <% @locations.each do |location| %>
     <div class="column is-one-third">

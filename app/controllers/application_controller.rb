@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
     current_user
   end
 
+  def admin?
+    @current_user.admin
+  end
+
   private
 
   def login_required
@@ -16,17 +20,22 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def admin_user
+    admin?
+  end
+
   def current_path
     @current_path = request.env['PATH_INFO'].split("/")[1]
   end
 
   def require_permission
     if current_user != User.find(params[:id])
-      redirect_to root_path
+      redirect_to root_path unless admin?
     end
   end
 
   helper_method :current_user
   helper_method :current_path
   helper_method :require_permission
+  helper_method :admin_user
 end

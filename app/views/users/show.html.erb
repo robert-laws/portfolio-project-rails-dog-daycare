@@ -2,6 +2,10 @@
 
 <h1 class="title">User Details</h1>
 
+<%= render partial: 'user_type' %>
+
+<%= render partial: 'user_functions', locals: { user: current_user } %>
+
 <div class='columns'>
   <div class='column'>
     <article class='box'>

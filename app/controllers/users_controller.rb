@@ -7,8 +7,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @addresses = @user.addresses
-    @dogs = @user.dogs
+    @profile_edit = session[:profile]
+    if @profile_edit
+      redirect_to edit_user_path(@user)
+    else
+      @addresses = @user.addresses
+      @dogs = @user.dogs
+    end
   end
 
   def edit
