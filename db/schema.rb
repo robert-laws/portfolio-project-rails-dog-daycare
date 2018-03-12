@@ -15,9 +15,10 @@ ActiveRecord::Schema.define(version: 20180312094642) do
   create_table "activities", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "ideal_size"
-    t.string "ideal_type"
+    t.string "best_for_size"
+    t.string "best_for_type"
     t.string "energy_usage"
+    t.boolean "custom", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

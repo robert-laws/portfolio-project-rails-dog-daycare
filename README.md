@@ -135,17 +135,19 @@ This repository includes all the work for my flatiron school portfolio project. 
 ### Locations
 
 - [x] create model and migration for location
-- [ ] add fields name, city, capacity, size, and open_year
+- [x] add fields name, city, capacity, size, and open_year
 - [ ] add controller for locations
 
 ### Activities
 
 - [x] create model and migration for activity
-- [ ] add fields name, description, ideal_size, ideal_type, energy_usage
+- [x] add fields name, description, ideal_size, ideal_type, energy_usage
 - [ ] add controller for activities
 
 ### Location_Activities
 
 - [x] create model and migration for location_activity
 - [x] confirm relationships in model belongs_to location and activities
+- [ ] add seeds for locations and activities
 
+### Features
