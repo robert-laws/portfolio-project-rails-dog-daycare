@@ -15,6 +15,8 @@
       <% @location.activities.each do |activity| %>
         <p><%= link_to activity.name, location_activity_path(@location, activity) %></p>
       <% end %>
+      <hr>
+      <%= link_to 'Edit Location', edit_location_path(@location) %>
     </article>
   </div>
 </div>

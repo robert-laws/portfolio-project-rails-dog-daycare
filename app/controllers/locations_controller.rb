@@ -30,7 +30,12 @@ class LocationsController < ApplicationController
   end
 
   def update
-
+    @location = Location.find(params[:id])
+    if @location.update(location_params)
+      redirect_to location_path(@location), notice: "Your location was updated successfully."
+    else
+      render :edit
+    end
   end
 
   def destroy
