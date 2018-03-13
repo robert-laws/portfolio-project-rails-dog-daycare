@@ -1,41 +1,100 @@
 <%= form_for @location do |f| %>
-  <%= f.label :city %>
-  <%= f.text_field :city %><br>
+  <div class='field'>
+    <%= f.label :name, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :name, class: 'input', placeholder: 'Name' %>
+    </div>
+  </div>
 
-  <%= f.label :open_year %>
-  <%= f.number_field :open_year %><br>
+  <div class='field'>
+    <%= f.label :city, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :city, class: 'input', placeholder: 'City' %>
+    </div>
+  </div>
 
-  <%= f.label :size %>
-  <%= f.number_field :size %><br>
+  <div class='field'>
+    <%= f.label :capacity, class: 'label' %>
+    <div class='control'>
+      <%= f.number_field :capacity, class: 'input', placeholder: 'Capacity' %>
+    </div>
+  </div>
 
-  <%= f.label 'Available Activities' %><br>
+  <div class='field'>
+    <%= f.label :size, class: 'label' %>
+    <div class='control'>
+      <%= f.number_field :size, class: 'input', placeholder: 'Size' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :open_year, class: 'label' %>
+    <div class='control'>
+      <%= f.number_field :open_year, class: 'input', placeholder: 'Year Opened' %>
+    </div>
+  </div>
+
+  <hr>
+
+  <%= content_tag(:h5, 'Available Activities', class: 'title is-5') %>
 
   <%= f.collection_check_boxes :activity_ids, @activities, :id, :name do |item| %>
-    <div>
-      <%= item.check_box %> <%= item.object.name %>
+    <div class="field">
+      <div class="control">
+        <label class="checkbox">
+          <%= item.check_box %>
+          <%= item.object.name %>
+        </label>
+      </div>
     </div>
   <% end %>
 
-  <%= f.label 'Create a New Activity' %><br>
+  <hr>
+
+  <%= content_tag(:h5, 'Create a New Activity', class: 'title is-5') %>
   
   <%= f.fields_for :activities, @activity do |activity_fields| %>
     <%= activity_fields.hidden_field :id %>
 
-    <%= activity_fields.label :name %>
-    <%= activity_fields.text_field :name %><br>
+    <div class='field'>
+      <%= activity_fields.label :name, class: 'label' %>
+      <div class='control'>
+        <%= activity_fields.text_field :name, class: 'input', placeholder: 'Name' %>
+      </div>
+    </div>
 
-    <%= activity_fields.label :description %>
-    <%= activity_fields.text_area :description%><br>
+    <div class='field'>
+      <%= activity_fields.label :description, class: 'label' %>
+      <div class='control'>
+        <%= activity_fields.text_area :description, class: 'input', placeholder: 'Description' %>
+      </div>
+    </div>
 
-    <%= activity_fields.label :ideal_type %>
-    <%= activity_fields.text_field :ideal_type %><br>
+    <div class='field'>
+      <%= activity_fields.label :best_for_type, class: 'label' %>
+      <div class='select'>
+        <%= activity_fields.select :best_for_type, [['all', 'all'], ['agile', 'agile'], ['energetic', 'energetic'], ['smart', 'smart']], { include_blank: 'select a type' } %>
+      </div>
+    </div>
 
-    <%= activity_fields.label :ideal_size %>
-    <%= activity_fields.text_field :ideal_size %><br>
+    <div class='field'>
+      <%= activity_fields.label :best_for_size, class: 'label' %>
+      <div class='select'>
+        <%= activity_fields.select :best_for_size, [['all', 'all'], ['small', 'small'], ['medium', 'medium'], ['large', 'large']], { include_blank: 'select a size' } %>
+      </div>
+    </div>
 
-    <%= activity_fields.label :energy_usage %>
-    <%= activity_fields.text_field :energy_usage %><br>
+    <div class='field'>
+      <%= activity_fields.label :energy_usage, class: 'label' %>
+      <div class='select'>
+        <%= activity_fields.select :energy_usage, [['low', 'low'], ['medium', 'medium'], ['high', 'high']], { include_blank: 'select an energy usage' } %>
+      </div>
+    </div>
   <% end %>
 
-  <%= f.submit %>
+  <div class="field">
+    <div class="control">
+      <%= f.submit submit_text, class: 'button is-info' %>
+    </div>
+  </div>
 <% end %>

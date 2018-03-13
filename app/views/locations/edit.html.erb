@@ -1,3 +1,5 @@
 <h1 class="title">Edit Locaiton Form</h1>
 
-<%= render 'form' %>
+<%= render partial: 'shared/form_errors', object: @location, as: 'obj' %>
+
+<%= render partials: 'form', locals: { submit_text: "Update Location" } %>

@@ -159,9 +159,9 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 #### Adding New Locations
 
-- [ ] add new view and controller new and create action for location
-- [ ] build collection_select in form to select existing activities to add to location
-- [ ] add edit view and controller edit and update action for location
+- [x] add new view and controller new and create action for location
+- [x] build collection_select in form to select existing activities to add to location
+- [x] add edit view and controller edit and update action for location
 - [ ] add destroy controller action for location
 
 #### Adding New Activity

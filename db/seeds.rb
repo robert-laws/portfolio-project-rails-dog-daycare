@@ -2,7 +2,7 @@ User.destroy_all
 Location.destroy_all
 Activity.destroy_all
 
-@user_1 = User.create(first_name: "Bob", last_name: "Cobb", email: "bobcobb@net.com", username: "bobcobb", password: "hello1")
+@user_1 = User.create(first_name: "Bob", last_name: "Cobb", email: "bobcobb@net.com", username: "bobcobb", password: "hello1", admin: true)
 @user_2 = User.create(first_name: "Hal", last_name: "Hope", email: "halhope@net.com", username: "halhope", password: "hello1")
 
 @address_1 = Address.create(street_1: "123 Main St.", street_2: "", city: "Boston", state: "MA", zip_code: "12353", user: @user_1)
