@@ -3,6 +3,12 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.all
+    capacity_min = params["min_capacity"].present? ? params["min_capacity"].to_i : Location.min_value("capacity")
+    capacity_max = params["max_capacity"].present? ? params["max_capacity"].to_i : Location.max_value("capacity")
+    @locations = @locations.values_between("capacity", capacity_min, capacity_max) unless capacity_max < capacity_min
+    size_min = params["min_size"].present? ? params["min_size"].to_i : Location.min_value("size")
+    size_max = params["max_size"].present? ? params["max_size"].to_i : Location.max_value("size")
+    @locations = @locations.values_between("size", size_min, size_max) unless size_max < size_min
   end
 
   def show

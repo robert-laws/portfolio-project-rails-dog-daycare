@@ -1,32 +1,34 @@
-<% if user.admin %>
-  <div class="box">
-    <div class='columns'>
-      <div class='column'>
-        <h4 class="title is-4">Admin Functions</h4>
+<% if user %>
+  <% if user.admin %>
+    <div class="box">
+      <div class='columns'>
+        <div class='column'>
+          <h4 class="title is-4">Admin Functions</h4>
+        </div>
+      </div>
+      <div class='columns'>
+        <div class='column is-one-quarter'>
+          <article>
+            <h4 class='title is-5'>Users</h4>
+            <p><%= link_to 'View all Users', users_path %></p>
+            <p><%= link_to 'Add new User', new_user_path %></p>
+          </article>
+        </div>
+        <div class='column is-one-quarter'>
+          <article>
+            <h4 class='title is-5'>Locations</h4>
+            <p><%= link_to 'View all Locations', locations_path %></p>
+            <p><%= link_to 'Add new Location', new_location_path %></p>
+          </article>
+        </div>
+        <div class='column is-one-quarter'>
+          <article>
+            <h4 class='title is-5'>Activities</h4>
+            <p><%= link_to 'View all Activities', activities_path %></p>
+            <p><%= link_to 'Add new Activity', new_activity_path %></p>
+          </article>
+        </div>
       </div>
     </div>
-    <div class='columns'>
-      <div class='column is-one-quarter'>
-        <article>
-          <h4 class='title is-5'>Users</h4>
-          <p><%= link_to 'View all Users', users_path %></p>
-          <p><%= link_to 'Add new User', new_user_path %></p>
-        </article>
-      </div>
-      <div class='column is-one-quarter'>
-        <article>
-          <h4 class='title is-5'>Locations</h4>
-          <p><%= link_to 'View all Locations', locations_path %></p>
-          <p><%= link_to 'Add new Location', new_location_path %></p>
-        </article>
-      </div>
-      <div class='column is-one-quarter'>
-        <article>
-          <h4 class='title is-5'>Activities</h4>
-          <p><%= link_to 'View all Activities', activities_path %></p>
-          <p><%= link_to 'Add new Activity', new_activity_path %></p>
-        </article>
-      </div>
-    </div>
-  </div>
+  <% end %>
 <% end %>

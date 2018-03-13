@@ -1,27 +1,78 @@
 <%= render 'shared/flash' %>
 
-<h1 class="title">All Locations</h1>
+<nav class="level">
+  <!-- Left side -->
+  <div class="level-left">
+    <div class="level-item">
+      <h1 class="title">All Locations</h1>
+    </div>
+  </div>
+
+  <!-- Right side -->
+  <%= form_tag("/locations", method: "get") do %>
+    <div class="level-right">
+      <p class="level-item"><strong>Filter Options:</strong></p>
+      <div class='level-item select'>
+        <p class="level-item">Capacity -- minimum</p>
+        <%= select_tag "min_capacity", options_for_select(Location.min_value("capacity")..Location.max_value("capacity"), params["min_capacity"]), include_blank: 'any' %>
+      </div>
+      <p class="level-item">to</p>
+      <div class='level-item select'>
+        <p class="level-item">maximum</p>
+        <%= select_tag "max_capacity", options_for_select(Location.min_value("capacity")..Location.max_value("capacity"), params["max_capacity"]), include_blank: 'any' %>
+      </div>
+    </div>
+    <br>
+    <div class="level-right">
+      <div class='level-item select'>
+        <p class="level-item">Size -- minimum</p>
+        <%= select_tag "min_size", options_for_select((Location.min_value("size")..Location.max_value("size")).step(50), params["min_size"]), include_blank: 'any' %>
+      </div>
+      <p class="level-item">to</p>
+      <div class='level-item select'>
+        <p class="level-item">maximum</p>
+        <%= select_tag "max_size", options_for_select((Location.min_value("size")..Location.max_value("size")).step(50), params["max_size"]), include_blank: 'any' %>
+      </div>
+    </div>
+    <br>
+    <div class="level-right">
+      <p class="level-item">
+        <%= submit_tag "Filter", class: 'button is-success' %>
+      </p>
+    </div>
+  <% end %>
+</nav>
 
 <%= render partial: 'users/user_type' %>
 
 <%= render partial: 'users/user_functions', locals: { user: current_user } %>
 
 <div class="columns is-multiline wrapping">
-  <% @locations.each do |location| %>
-    <div class="column is-one-third">
-      <div class="box">
-        <p class="title is-4"><%= link_to location.name, location_path(location) %></p>
-        <p><strong>City:</strong> <%= location.city %></p>
-        <p><strong>Capacity:</strong> <%= location.capacity %></p>
-        <p><strong>Size:</strong> <%= location.size %></p>
-        <p><strong>Opened in:</strong> <%= location.open_year %></p>
-        <hr>
-        <p class="title is-6">Activities available at <%= location.name %></p>
-          <% location.activities.each do |activity| %>
-            <p><%= link_to activity.name, location_activity_path(location, activity) %></p>
-          <% end %>
-        </article>
+  <% if @locations.size > 0 %>
+    <% @locations.each do |location| %>
+      <div class="column is-one-third">
+        <div class="box">
+          <p class="title is-4"><%= link_to location.name, location_path(location) %></p>
+          <p><strong>City:</strong> <%= location.city %></p>
+          <p><strong>Capacity:</strong> <%= location.capacity %></p>
+          <p><strong>Size:</strong> <%= location.size %></p>
+          <p><strong>Opened in:</strong> <%= location.open_year %></p>
+          <hr>
+          <p class="title is-6">Activities available at <%= location.name %></p>
+            <% location.activities.each do |activity| %>
+              <p><%= link_to activity.name, location_activity_path(location, activity) %></p>
+            <% end %>
+          </article>
+        </div>
       </div>
+    <% end %>
+  <% else %>
+    <div class="column">
+      <article class="message is-danger">
+        <div class="message-body">
+          No locations found...
+        </div>
+      </article>
     </div>
   <% end %>
 </div>

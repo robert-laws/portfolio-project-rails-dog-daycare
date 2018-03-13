@@ -169,3 +169,9 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [ ] add new view and controller action for activity
 - [ ] add edit view and controller action for activity
 - [ ] add destroy controller action for activity
+
+### Filters and Sorting
+
+- [ ] add filtering controls for locations
+- [ ] add model scopes for filtering features
+- [ ] add helper methods for text formatting within views

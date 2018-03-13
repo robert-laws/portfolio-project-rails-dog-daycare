@@ -4,6 +4,13 @@ class Location < ApplicationRecord
 
   accepts_nested_attributes_for :activities
 
+  scope :min_value, ->(column){ minimum(column) }
+  scope :max_value, ->(column){ maximum(column) }
+
+  def self.values_between(column, min, max)
+    where("#{column} >= ? AND #{column} <= ?", min, max)
+  end
+
   def activities_attributes=(activity_attributes)
     activity_attributes.values.each do |activity_attribute|
       if activity_attribute[:id].present?
