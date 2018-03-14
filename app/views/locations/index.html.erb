@@ -8,37 +8,92 @@
     </div>
   </div>
 
-  <!-- Right side -->
+  <div class="level-right">
+    <div class="level-item">
+
+    </div>
+  </div>
+</nav>
+
+<nav class="level">
+  <!-- Left side -->
   <%= form_tag("/locations", method: "get") do %>
-    <div class="level-right">
-      <p class="level-item"><strong>Filter Options:</strong></p>
-      <div class='level-item select'>
-        <p class="level-item">Capacity -- minimum</p>
-        <%= select_tag "min_capacity", options_for_select(Location.min_value("capacity")..Location.max_value("capacity"), params["min_capacity"]), include_blank: 'any' %>
+    <div class="level-left">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="title is-5">Filter Options:</p>
+        </div>
       </div>
-      <p class="level-item">to</p>
-      <div class='level-item select'>
-        <p class="level-item">maximum</p>
-        <%= select_tag "max_capacity", options_for_select(Location.min_value("capacity")..Location.max_value("capacity"), params["max_capacity"]), include_blank: 'any' %>
+
+      <div class="level-item">
+        <div>
+          <p class="heading">Capacity</p>
+          <div class="select">
+            <%= select_tag "min_capacity", options_for_select(Location.min_value("capacity")..Location.max_value("capacity"), params["min_capacity"]), include_blank: 'any' %>
+          </div>
+        </div>
       </div>
-    </div>
-    <br>
-    <div class="level-right">
-      <div class='level-item select'>
-        <p class="level-item">Size -- minimum</p>
-        <%= select_tag "min_size", options_for_select((Location.min_value("size")..Location.max_value("size")).step(50), params["min_size"]), include_blank: 'any' %>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="title is-5">to</p>
+        </div>
       </div>
-      <p class="level-item">to</p>
-      <div class='level-item select'>
-        <p class="level-item">maximum</p>
-        <%= select_tag "max_size", options_for_select((Location.min_value("size")..Location.max_value("size")).step(50), params["max_size"]), include_blank: 'any' %>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <div class="select">
+            <%= select_tag "max_capacity", options_for_select(Location.min_value("capacity")..Location.max_value("capacity"), params["max_capacity"]), include_blank: 'any' %>
+          </div>
+        </div>
       </div>
-    </div>
-    <br>
-    <div class="level-right">
-      <p class="level-item">
-        <%= submit_tag "Filter", class: 'button is-success' %>
-      </p>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="title is-5">&nbsp;</p>
+        </div>
+      </div>
+
+      <div class="level-item">
+        <div>
+          <p class="heading">Size</p>
+          <div class="select">
+            <%= select_tag "min_size", options_for_select((Location.min_value("size")..Location.max_value("size")).step(50), params["min_size"]), include_blank: 'any' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="title is-5">to</p>
+        </div>
+      </div>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <div class="select">
+            <%= select_tag "max_size", options_for_select((Location.min_value("size")..Location.max_value("size")).step(50), params["max_size"]), include_blank: 'any' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="level-item">
+            <%= submit_tag "Apply Filter", class: 'button is-success' %>
+          </p>          
+        </div>
+      </div>
+
+
+      
     </div>
   <% end %>
 </nav>
