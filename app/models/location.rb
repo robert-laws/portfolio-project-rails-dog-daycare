@@ -7,8 +7,16 @@ class Location < ApplicationRecord
   scope :min_value, ->(column){ minimum(column) }
   scope :max_value, ->(column){ maximum(column) }
 
+  def self.city_list
+    select(:city).collect { |c| c.city }.uniq.sort
+  end
+
   def self.values_between(column, min, max)
     where("#{column} >= ? AND #{column} <= ?", min, max)
+  end
+
+  def self.select_by_city(city)
+    where("city = ?", city)
   end
 
   def activities_attributes=(activity_attributes)

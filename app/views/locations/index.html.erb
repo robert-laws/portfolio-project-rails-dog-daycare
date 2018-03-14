@@ -7,18 +7,18 @@
       <h1 class="title">All Locations</h1>
     </div>
   </div>
-
-  <div class="level-right">
-    <div class="level-item">
-
-    </div>
-  </div>
 </nav>
 
 <nav class="level">
+  <div class="level-left">
+    <div class="level-item">
+      &nbsp;
+    </div>
+  </div>
+
   <!-- Left side -->
   <%= form_tag("/locations", method: "get") do %>
-    <div class="level-left">
+    <div class="level-right">
       <div class="level-item has-text-centered">
         <div>
           <p class="heading">&nbsp;</p>
@@ -54,7 +54,7 @@
       <div class="level-item has-text-centered">
         <div>
           <p class="heading">&nbsp;</p>
-          <p class="title is-5">&nbsp;</p>
+          <p class="title is-5">+</p>
         </div>
       </div>
 
@@ -86,17 +86,73 @@
       <div class="level-item has-text-centered">
         <div>
           <p class="heading">&nbsp;</p>
+          <p class="title is-5">+</p>
+        </div>
+      </div>
+
+      <div class="level-item">
+        <div>
+          <p class="heading">Year Opened</p>
+          <div class="select">
+            <%= select_tag "min_open_year", options_for_select((Location.min_value("open_year")..Location.max_value("open_year")), params["min_open_year"]), include_blank: 'any' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="title is-5">to</p>
+        </div>
+      </div>
+
+      <div class="level-item">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <div class="select">
+            <%= select_tag "max_open_year", options_for_select((Location.min_value("open_year")..Location.max_value("open_year")), params["max_open_year"]), include_blank: 'any' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="title is-5">+</p>
+        </div>
+      </div>
+
+      <div class="level-item">
+        <div>
+          <p class="heading">CIty</p>
+          <div class="select">
+            <%= select_tag "city", options_for_select((Location.city_list), params["city"]), include_blank: 'any' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
           <p class="level-item">
             <%= submit_tag "Apply Filter", class: 'button is-success' %>
           </p>          
         </div>
       </div>
 
-
-      
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="level-item">
+            <%= link_to 'Reset Filters', locations_path, class: 'button is-success' %>
+          </p>          
+        </div>
+      </div>
     </div>
   <% end %>
 </nav>
+
+<hr>
 
 <%= render partial: 'users/user_type' %>
 

@@ -9,6 +9,11 @@ class LocationsController < ApplicationController
     size_min = params["min_size"].present? ? params["min_size"].to_i : Location.min_value("size")
     size_max = params["max_size"].present? ? params["max_size"].to_i : Location.max_value("size")
     @locations = @locations.values_between("size", size_min, size_max) unless size_max < size_min
+    open_year_min = params["min_open_year"].present? ? params["min_open_year"].to_i : Location.min_value("open_year")
+    open_year_max = params["max_open_year"].present? ? params["max_open_year"].to_i : Location.max_value("open_year")
+    @locations = @locations.values_between("open_year", open_year_min, open_year_max) unless open_year_max < open_year_min
+    city = params["city"] if params["city"].present?
+    @locations = @locations.select_by_city(city) unless city.nil? 
   end
 
   def show
