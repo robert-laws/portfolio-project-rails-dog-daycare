@@ -1,6 +1,92 @@
 <%= render 'shared/flash' %>
 
-<h1 class="title">All Activities</h1>
+<nav class="level">
+  <!-- Left side -->
+  <div class="level-left">
+    <div class="level-item">
+      <h1 class="title">All Activities</h1>
+    </div>
+  </div>
+</nav>
+
+<nav class="level">
+  <div class="level-left">
+    <div class="level-item">
+      &nbsp;
+    </div>
+  </div>
+
+  <!-- Left side -->
+  <%= form_tag("/activities", method: "get") do %>
+    <div class="level-right">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="title is-5">Filter Options:</p>
+        </div>
+      </div>
+
+      <div class="level-item">
+        <div>
+          <p class="heading">Best for Size</p>
+          <div class="select">
+            <%= select_tag "best_for_size", options_for_select(Activity.uniq_values("best_for_size"), params["best_for_size"]), include_blank: 'any' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="title is-5">+</p>
+        </div>
+      </div>
+
+      <div class="level-item">
+        <div>
+          <p class="heading">Best for Type</p>
+          <div class="select">
+            <%= select_tag "best_for_type", options_for_select(Activity.uniq_values("best_for_type"), params["best_for_type"]), include_blank: 'any' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="title is-5">+</p>
+        </div>
+      </div>
+
+      <div class="level-item">
+        <div>
+          <p class="heading">Energy Usage</p>
+          <div class="select">
+            <%= select_tag "energy_usage", options_for_select(Activity.uniq_values("energy_usage"), params["energy_usage"]), include_blank: 'any' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="level-item">
+            <%= submit_tag "Apply Filter", class: 'button is-success' %>
+          </p>          
+        </div>
+      </div>
+
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">&nbsp;</p>
+          <p class="level-item">
+            <%= link_to 'Reset Filters', activities_path, class: 'button is-success' %>
+          </p>          
+        </div>
+      </div>
+    </div>
+  <% end %>
+</nav>
 
 <div class="columns is-multiline wrapping">
   <% @activities.each do |activity| %>

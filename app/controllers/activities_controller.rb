@@ -11,7 +11,14 @@ class ActivitiesController < ApplicationController
         @activities = @location.activities
       end
     else
-      @activities = Activity.all
+      @activities = Activity.all_except_custom
+
+      best_for_size = params["best_for_size"].present? ? params["best_for_size"] : nil
+      @activities = @activities.by_select("best_for_size", best_for_size) unless best_for_size.nil?
+      best_for_type = params["best_for_type"].present? ? params["best_for_type"] : nil
+      @activities = @activities.by_select("best_for_type", best_for_type) unless best_for_type.nil?
+      energy_usage = params["energy_usage"].present? ? params["energy_usage"] : nil
+      @activities = @activities.by_select("energy_usage", energy_usage) unless energy_usage.nil?
     end
   end
 
