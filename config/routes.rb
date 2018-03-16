@@ -30,5 +30,5 @@ Rails.application.routes.draw do
   end
 
   # activities
-  resources :activities, only: [:index, :show, :new, :create]
+  resources :activities, only: [:index, :show, :new, :create, :edit, :update]
 end

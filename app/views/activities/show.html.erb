@@ -11,6 +11,8 @@
       <p><strong>Best for Type:</strong> <%= @activity.best_for_type %></p>
       <p><strong>Energy Usage:</strong> <%= @activity.energy_usage %></p>
       <p><strong>Custom:</strong> <%= @activity.custom %></p>
+      <hr>
+      <%= link_to 'Edit Activity', edit_activity_path(@activity) %>
     </article>
   </div>
 </div>
