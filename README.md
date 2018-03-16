@@ -182,25 +182,26 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 #### Reservations Model
 
-- [ ] create model and migration for reservation
-- [ ] add fields named date, drop_off_time, pick_up_time, user_id
+- [x] create model and migration for reservation
+- [x] add fields named date, drop_off_time, pick_up_time, user_id
 
 #### Reservation_Activities
 
-- [ ] create model and migration fro reservation_activities
-- [ ] add fields named duration, reservation_id, activity_id
+- [x] create model and migration fro reservation_activities
+- [x] add fields named duration, reservation_id, activity_id
 
 #### Associations
 
-- [ ] add associations for reservation -> has_many reservation_activities, and has_many activities through, belongs_to user
-- [ ] add associations for activities -> has_many reservation_activities, and has_many reservations through
-- [ ] add associations for reservation_activities -> belongs_to reservation, belongs_to activity
-- [ ] add associations for users -> has_many reservations
+- [x] add associations for reservation -> has_many reservation_activities, and has_many activities through, belongs_to user
+- [x] add associations for activities -> has_many reservation_activities, and has_many reservations through
+- [x] add associations for reservation_activities -> belongs_to reservation, belongs_to activity
+- [x] add associations for users -> has_many reservations
 
 #### Controllers
 
-- [ ] add controller and views for reservations -> index, show, new, edit
-- [ ] add routes for controller actions -> index, show, new, create, edit, update, destroy
+- [x] add controller and views for reservations -> index, show, new, edit
+- [x] add routes for controller actions -> index
+- [x] add nested routes for controller actions within a user context -> index, show, new, create, edit, update, destroy
 - [ ] setup index and show views for reservation content
 
 ### Views

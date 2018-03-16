@@ -34,6 +34,15 @@
             </article>
           </div>
         <% end %>
+        <% if path == 'reservations' || path == 'users' %>
+          <div class='column is-one-quarter'>
+            <article>
+              <h4 class='title is-5'>Reservations</h4>
+              <p><%= link_to 'View all Reservations', reservations_path %></p>
+              <p><%#= link_to 'Add new Reservation', new_reservation_path %></p>
+            </article>
+          </div>
+        <% end %>
       </div>
     </div>
   <% end %>

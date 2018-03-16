@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_many :addresses, dependent: :destroy
   has_many :dogs, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 
   accepts_nested_attributes_for :addresses
   accepts_nested_attributes_for :dogs

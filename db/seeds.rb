@@ -1,6 +1,7 @@
 User.destroy_all
 Location.destroy_all
 Activity.destroy_all
+Reservation.destroy_all
 
 @user_1 = User.create(first_name: "Bob", last_name: "Cobb", email: "bobcobb@net.com", username: "bobcobb", password: "hello1", admin: true)
 @user_2 = User.create(first_name: "Hal", last_name: "Hope", email: "halhope@net.com", username: "halhope", password: "hello1")
@@ -44,3 +45,7 @@ activity_group.each do |val|
 end
 
 @location_4.activities << @activity_4
+
+@reservation_1 = Reservation.create(date: Date.new(2018,3,25), drop_off_time: Time.new(2018,3,25,9,0,0), pick_up_time: Time.new(2018,3,25,17,0,0), user: @user_1)
+
+@reservation_activity_1 = ReservationActivity.create(duration: 60, reservation: @reservation_1, activity: @activity_1)

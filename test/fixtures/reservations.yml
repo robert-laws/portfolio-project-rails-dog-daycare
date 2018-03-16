@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-03-16
+  drop_off_time: 2018-03-16 18:28:09
+  pick_up_time: 2018-03-16 18:28:09
+  user_id: 
+
+two:
+  date: 2018-03-16
+  drop_off_time: 2018-03-16 18:28:09
+  pick_up_time: 2018-03-16 18:28:09
+  user_id: 

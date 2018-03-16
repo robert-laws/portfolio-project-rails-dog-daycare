@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     else
       @addresses = @user.addresses
       @dogs = @user.dogs
+      @reservations = @user.reservations
     end
   end
 

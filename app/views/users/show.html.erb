@@ -16,7 +16,8 @@
   </div>
   <div class="column is-one-third">
     <article class='box'>
-      <%= link_to 'Add a New Dog', new_user_dog_path(@user) %>
+      <p><%= link_to 'Add a New Dog', new_user_dog_path(@user) %></p>
+      <p><%= link_to 'Add a New Reservation', new_user_reservation_path(@user) %></p>
     </article>
   </div>
 </div>
@@ -53,8 +54,37 @@
     </div>
   <% end %>
 </div>
-
-
-
-
-
+<div class='columns'>
+  <% if @reservations.size > 0 %>
+    <% @reservations.each_with_index do |reservation, index| %>
+      <div class='column'>
+        <article class='box'>
+          <h4 class='title'><%= link_to "Reservation # #{index + 1}", user_reservation_path(@user, reservation) %></h4>
+          <p><strong>Date:</strong> <%= reservation.date %></p>
+          <p><strong>Drop Off Time:</strong> <%= reservation.drop_off_time %></p>
+          <p><strong>Pick Up Time:</strong> <%= reservation.pick_up_time %></p>
+          <% if reservation.reservation_activities.size > 0 %>
+            <hr>
+            <h4 class="title is-4">Activities Selected</h4>
+            <% reservation.reservation_activities.each_with_index do |reservation_activity, index| %>
+              <h5 class="title is-5">Activity # <%= "#{index + 1}" %></h5>
+              <p><strong>Activity Name:</strong> <%= reservation_activity.activity.name %></p>
+              <p><strong>Activity Duration:</strong> <%= reservation_activity.duration %></p>
+            <% end %>
+          <% end %>
+          <hr>
+          <p><%#= link_to 'Edit Reservation Details', edit_user_reservaiton_path(@user, reservation) %></p>
+          <p><%#= link_to 'Remove this Reservation', reservation, method: :delete, data: { confirm: "Are you sure?" } %></p>
+        </article>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="column">
+      <article class="message is-danger">
+        <div class="message-body">
+          No reservations found...
+        </div>
+      </article>
+    </div>
+  <% end %>
+</div>
