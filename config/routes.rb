@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :addresses, only: [:update]
 
   # dogs
-  resources :dogs, only: [:create, :update, :destroy]
+  resources :dogs, only: [:show, :create, :update, :destroy]
 
   # locations
   resources :locations, only: [:index, :show, :new, :create, :edit, :update, :destroy] do

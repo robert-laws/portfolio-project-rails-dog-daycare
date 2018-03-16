@@ -42,9 +42,9 @@
   <% @dogs.each do |dog| %>
     <div class='column'>
       <article class='box'>
-        <h4 class='title'><%= dog.name %></h4>
+        <h4 class='title'><%= link_to dog.name, user_dog_path(@user, dog) %></h4>
         <p><strong>Name:</strong> <%= dog.breed %></p>
-        <p><strong>Name:</strong> <%= dog.age %></p>
+        <p><strong>Name:</strong> <%= years_old dog %></p>
         <p><strong>Name:</strong> <%= dog.sex %></p>
         <hr>
         <p><%= link_to 'Edit Dog Details', edit_user_dog_path(@user, dog) %></p>
