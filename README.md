@@ -230,7 +230,9 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [ ] allow user to initiate a show, new, edit, or destroy controller action from their account page
 - [ ] add these controller actions to the reservations table 
 
-#### Reservations Extras
+#### Reservations Helpers
 
+- [ ] add reservations helpers -> date display
+- [ ] add reservations helpers -> time display
 - [ ] add reservations helpers -> calculation of costs
 - [ ] add reservations helpers -> display of costs and totals
