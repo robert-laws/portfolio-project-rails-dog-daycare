@@ -33,4 +33,23 @@ class ActivitiesController < ApplicationController
       @activity = Activity.find(params[:id])
     end
   end
+
+  def new
+    @activity = Activity.new
+  end
+
+  def create
+    @activity = Activity.new(activity_params)
+    if @activity.save
+      redirect_to activity_path(@activity), notice: "Activity was successfully created"
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def activity_params
+    params.require(:activity).permit(:name, :description, :best_for_size, :best_for_type, :energy_usage)
+  end
 end

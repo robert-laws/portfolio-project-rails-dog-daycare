@@ -1,0 +1,44 @@
+<%= form_for @activity do |f| %>
+  <%= f.hidden_field :id %>
+
+  <div class='field'>
+    <%= f.label :name, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :name, class: 'input', placeholder: 'Name' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :description, class: 'label' %>
+    <div class='control'>
+      <%= f.text_area :description, class: 'input', placeholder: 'Description' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :best_for_type, class: 'label' %>
+    <div class='select'>
+      <%= f.select :best_for_type, [['all', 'all'], ['agile', 'agile'], ['energetic', 'energetic'], ['smart', 'smart']], { include_blank: 'select a type' } %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :best_for_size, class: 'label' %>
+    <div class='select'>
+      <%= f.select :best_for_size, [['all', 'all'], ['small', 'small'], ['medium', 'medium'], ['large', 'large']], { include_blank: 'select a size' } %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :energy_usage, class: 'label' %>
+    <div class='select'>
+      <%= f.select :energy_usage, [['low', 'low'], ['medium', 'medium'], ['high', 'high']], { include_blank: 'select an energy usage' } %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.submit submit_text, class: 'button is-info' %>
+    </div>
+  </div>
+<% end %>
