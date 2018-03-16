@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # root
   root 'static#home'
 
+  # static pages
+  get '/about', to: 'static#about', as: 'about'
+
   # sessions
   get '/signin', to: 'sessions#new'
   post '/sessions/create', to: 'sessions#create'
