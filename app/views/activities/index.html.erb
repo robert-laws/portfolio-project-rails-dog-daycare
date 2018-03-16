@@ -88,6 +88,12 @@
   <% end %>
 </nav>
 
+<hr>
+
+<%= render partial: 'users/user_type' %>
+
+<%= render partial: 'users/user_functions', locals: { user: current_user, path: current_path } %>
+
 <div class="columns is-multiline wrapping">
   <% @activities.each do |activity| %>
     <div class="column is-one-third">

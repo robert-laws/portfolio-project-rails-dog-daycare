@@ -16,7 +16,8 @@
         <p><%= link_to activity.name, location_activity_path(@location, activity) %></p>
       <% end %>
       <hr>
-      <%= link_to 'Edit Location', edit_location_path(@location) %>
+      <p><%= link_to 'Edit Location', edit_location_path(@location) %></p>
+      <p><%= link_to 'Delete Location', @location, method: :delete, data: { confirm: "Are you sure?" } %></p>
     </article>
   </div>
 </div>

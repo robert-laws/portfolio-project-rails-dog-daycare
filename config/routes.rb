@@ -25,10 +25,10 @@ Rails.application.routes.draw do
   resources :dogs, only: [:create, :update, :destroy]
 
   # locations
-  resources :locations, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :locations, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :activities, only: [:index, :show]
   end
 
   # activities
-  resources :activities, only: [:index, :show, :new, :create, :edit, :update]
+  resources :activities, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 end

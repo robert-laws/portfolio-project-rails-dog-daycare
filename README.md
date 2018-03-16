@@ -162,16 +162,16 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] add new view and controller new and create action for location
 - [x] build collection_select in form to select existing activities to add to location
 - [x] add edit view and controller edit and update action for location
-- [ ] add destroy controller action for location
+- [x] add destroy controller action for location
 
 #### Adding New Activity
 
-- [ ] add new view and controller action for activity
-- [ ] add edit view and controller action for activity
-- [ ] add destroy controller action for activity
+- [x] add new view and controller action for activity
+- [x] add edit view and controller action for activity
+- [x] add destroy controller action for activity
 
 ### Filters and Sorting
 
-- [ ] add filtering controls for locations
-- [ ] add model scopes for filtering features
+- [x] add filtering controls for locations
+- [x] add model scopes for filtering features
 - [ ] add helper methods for text formatting within views

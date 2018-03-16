@@ -156,7 +156,7 @@
 
 <%= render partial: 'users/user_type' %>
 
-<%= render partial: 'users/user_functions', locals: { user: current_user } %>
+<%= render partial: 'users/user_functions', locals: { user: current_user, path: current_path } %>
 
 <div class="columns is-multiline wrapping">
   <% if @locations.size > 0 %>

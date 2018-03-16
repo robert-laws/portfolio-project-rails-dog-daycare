@@ -50,7 +50,8 @@ class LocationsController < ApplicationController
   end
 
   def destroy
-
+    Location.find(params[:id]).destroy
+    redirect_to locations_path
   end
 
   private
