@@ -174,4 +174,62 @@ This repository includes all the work for my flatiron school portfolio project. 
 
 - [x] add filtering controls for locations
 - [x] add model scopes for filtering features
-- [ ] add helper methods for text formatting within views
+- [x] add helper methods for text formatting within views
+
+## Phase 5
+
+### Reservations
+
+#### Reservations Model
+
+- [ ] create model and migration for reservation
+- [ ] add fields named date, drop_off_time, pick_up_time, user_id
+
+#### Reservation_Activities
+
+- [ ] create model and migration fro reservation_activities
+- [ ] add fields named duration, reservation_id, activity_id
+
+#### Associations
+
+- [ ] add associations for reservation -> has_many reservation_activities, and has_many activities through, belongs_to user
+- [ ] add associations for activities -> has_many reservation_activities, and has_many reservations through
+- [ ] add associations for reservation_activities -> belongs_to reservation, belongs_to activity
+- [ ] add associations for users -> has_many reservations
+
+#### Controllers
+
+- [ ] add controller and views for reservations -> index, show, new, edit
+- [ ] add routes for controller actions -> index, show, new, create, edit, update, destroy
+- [ ] setup index and show views for reservation content
+
+### Views
+
+- [ ] populate index and show views to display model content
+- [ ] add and begin building _form partial for reservations
+- [ ] add activity check_boxes and activity_ids with duration select field
+- [ ] add new activity fields_for nested form
+- [ ] update reservations controller for new, create, edit, and update actions
+
+### Destroy Action
+
+- [ ] add destroy action to controller
+- [ ] add link_to for destroy action to show view
+- [ ] redirect user to reservations_path upon destroy
+
+### Reservation Integrations
+
+#### Displaying and Sorting Reservations
+
+- [ ] incorporate reservations into users#show account information
+- [ ] create a sortable reservations table for listing all user reservations -> incorporating the ability
+
+#### Administering Reservations
+
+- [ ] allow user to initiate a show, new, edit, or destroy controller action from their account page
+- [ ] add these controller actions to the reservations table 
+
+#### Reservations Extras
+
+- [ ] add reservations helpers -> calculation of costs
+- [ ] add reservations helpers -> display of costs and totals
