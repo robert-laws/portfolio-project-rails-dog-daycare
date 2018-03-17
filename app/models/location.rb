@@ -2,6 +2,12 @@ class Location < ApplicationRecord
   has_many :location_activities, dependent: :destroy
   has_many :activities, through: :location_activities
 
+  validates :name, presence: true
+  validates :city, presence: true
+  validates :capacity, presence: true, numericality: { only_integer: true }
+  validates :size, presence: true, numericality: { only_integer: true }
+  validates :open_year, presence: true, numericality: { only_integer: true }
+
   accepts_nested_attributes_for :activities
 
   scope :min_value, ->(column){ minimum(column) }

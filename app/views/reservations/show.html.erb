@@ -12,7 +12,7 @@
       <% if @reservation.reservation_activities.size > 0 %>
         <hr>
         <h4 class="title is-4">Activities Selected</h4>
-        <h5 class="title is-5">Total Activity Time: <%= @total_time %></h5>
+        <h5 class="title is-5">Total Activity Time: <%= pluralize(@total_time, "minute") %></h5>
         <% @reservation.reservation_activities.each_with_index do |reservation_activity, index| %>
           <h5 class="title is-5">Activity # <%= "#{index + 1}" %></h5>
           <p><strong>Activity Name:</strong> <%= reservation_activity.activity.name %></p>

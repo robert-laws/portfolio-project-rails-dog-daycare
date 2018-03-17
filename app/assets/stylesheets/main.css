@@ -39,6 +39,10 @@ a.navbar-item.is-active {
   border: 1px solid red;
 }
 
+.field_with_errors textarea {
+  border: 1px solid red;
+}
+
 .field_with_errors select {
   border: 1px solid red;
 }
@@ -47,4 +51,24 @@ a.navbar-item.is-active {
 
 .wrapping > .column > .box {
   min-height: 380px;
+}
+
+/** Custom Select Style **/
+
+.select_field select {
+  padding-right: 2.5em !important;
+}
+
+.select_field select:hover {
+  border-color: #b5b5b5 !important;
+}
+
+.select_field select:active {
+  border-color: #3273dc !important;
+  -webkit-box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25) !important;
+  box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25) !important;
+}
+
+.select_field select {
+  display: inline-block !important;
 }

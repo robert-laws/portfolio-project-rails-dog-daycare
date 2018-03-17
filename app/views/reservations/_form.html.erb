@@ -4,22 +4,22 @@
 
   <div class='field'>
     <%= f.label :date, class: 'label' %>
-    <div class='control'>
-      <%= f.date_field :date, class: 'input', placeholder: 'Date' %>
+    <div class='select'>
+      <%= f.date_select :date, { date_separator: "</div> <div class='select'>" } %>
     </div>
   </div>
 
-  <div class='field'>
+  <div class='field select_field'>
     <%= f.label :drop_off_time, class: 'label' %>
-    <div class='control'>
-      <%= f.time_field :drop_off_time, class: 'input', placeholder: 'Drop Off Time' %>
+    <div class='select'>
+      <%= f.time_select :drop_off_time, { time_separator: "</div> <div class='select'>" } %>
     </div>
   </div>
 
   <div class='field'>
     <%= f.label :pick_up_time, class: 'label' %>
-    <div class='control'>
-      <%= f.time_field :pick_up_time, class: 'input', placeholder: 'Pick Up Time' %>
+    <div class='select select_field'>
+      <%= f.time_select :pick_up_time, { time_separator: "</div> <div class='select'>" } %>
     </div>
   </div>
 

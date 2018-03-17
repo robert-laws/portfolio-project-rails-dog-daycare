@@ -31,6 +31,8 @@ class LocationsController < ApplicationController
     if @location.save
       redirect_to location_path(@location), notice: "Your location was created successfully."
     else
+      @activities = Activity.all
+      @activity = @location.activities.build
       render :new
     end
   end
