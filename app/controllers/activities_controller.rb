@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  skip_before_action :login_required, only: [:show, :index]
+  skip_before_action :login_required, only: [:show, :index, :top]
 
   def index
     if params[:location_id]
@@ -63,6 +63,11 @@ class ActivitiesController < ApplicationController
   def destroy
     Activity.find(params[:id]).destroy
     redirect_to activities_path
+  end
+
+  def top
+    @activity = Activity.top
+    @top_count = @activity.reservation_activities.size
   end
 
   private

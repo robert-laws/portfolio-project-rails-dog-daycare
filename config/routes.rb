@@ -30,6 +30,9 @@ Rails.application.routes.draw do
     resources :activities, only: [:index, :show]
   end
 
+  # custom activities
+  get '/activities/top', to: 'activities#top'
+
   # activities
   resources :activities, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 

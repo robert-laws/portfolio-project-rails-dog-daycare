@@ -1,0 +1,23 @@
+<h1 class="title">Top Activity</h1>
+
+<div class='columns'>
+  <div class='column'>
+    <article>
+      This is the activity that has been selected the most by users to add to their reservation.
+    </article>
+  </div>
+</div>
+<div class='columns'>
+  <div class='column'>
+    <article class='box'>
+      <% if @activity %>
+        <p class="title is-4"><%= @activity.name %></p>
+        <p><strong>Description:</strong> <%= @activity.description %></p>
+        <hr>
+        <p><strong>This activity has been booked in <%= pluralize(@top_count, "reservation") %></p>
+      <% else %>
+        <p>There aren't any activities that are top at the moment</p>
+      <% end %>
+    </article>
+  </div>
+</div>
