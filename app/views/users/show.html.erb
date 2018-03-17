@@ -18,6 +18,7 @@
   </div>
   <div class="column is-one-third">
     <article class='box'>
+      <p><%= link_to 'Edit Your User Account', edit_user_path(@user) %></p>
       <p><%= link_to 'Add a New Dog', new_user_dog_path(@user) %></p>
       <% if current_user.dogs.size > 0 %>
         <p><%= link_to 'Add a New Reservation', new_user_reservation_path(@user) %></p>
