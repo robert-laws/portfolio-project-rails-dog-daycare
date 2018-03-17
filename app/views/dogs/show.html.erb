@@ -11,6 +11,14 @@
       <p><strong>Breed:</strong> <%= @dog.breed %></p>
       <p><strong>Age:</strong> <%= years_old @dog %></p>
       <p><strong>Sex:</strong> <%= @dog.sex %></p>
+      <h5 class='title is-5'>Reservations for <%= @dog.name %></h5>
+      <ul>
+        <% @dog.reservations.each do |reservation| %>
+          <li>
+            <strong>Date:</strong> <%= format_date reservation.date %>
+          </li>
+        <% end %>
+      </ul>
       <hr>
       <p><%= link_to 'Edit Dog Details', edit_user_dog_path(@dog.user, @dog) %></p>
       <p><%= link_to 'Remove this Dog', @dog, method: :delete, data: { confirm: "Are you sure?" } %></p>

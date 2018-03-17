@@ -2,7 +2,9 @@ class Reservation < ApplicationRecord
   has_many :reservation_activities, dependent: :destroy
   has_many :activities, through: :reservation_activities
   belongs_to :user
+  belongs_to :dog
 
+  validates :dog_id, presence: { message: "must be selected" }
   validates :date, presence: true
   validates :drop_off_time, presence: true
   validates :pick_up_time, presence: true

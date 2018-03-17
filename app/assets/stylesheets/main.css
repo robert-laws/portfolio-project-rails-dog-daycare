@@ -4,6 +4,11 @@
   padding: 2rem
 }
 
+h5 {
+  margin-top: 24px !important;
+  margin-bottom: 12px !important;
+}
+
 /** Navigation Overrides **/
 
 a.navbar-item.is-active {

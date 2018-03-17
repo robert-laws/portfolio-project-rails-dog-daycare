@@ -29,6 +29,7 @@ class ReservationsController < ApplicationController
         @reservation = Reservation.new
         @reservation_activities = @reservation.reservation_activities.build
         @activities = Activity.all_except_custom
+        @dogs = Dog.user_dogs(@user.id)
       end
     else
       redirect_to root_path
@@ -47,6 +48,7 @@ class ReservationsController < ApplicationController
         else
           @reservation_activities = @reservation.reservation_activities.build
           @activities = Activity.all_except_custom
+          @dogs = Dog.user_dogs(@user.id)
           render :new
         end
       end
@@ -63,6 +65,7 @@ class ReservationsController < ApplicationController
       else
         @reservation = Reservation.find(params[:id])
         @activities = Activity.all
+        @dogs = Dog.user_dogs(@user.id)
       end
     else
       redirect_to root_path
@@ -80,6 +83,7 @@ class ReservationsController < ApplicationController
           redirect_to user_reservation_path(@user, @reservation), notice: "Reservation was successfully updated"
         else
           @activities = Activity.all
+          @dogs = Dog.user_dogs(@user.id)
           render :edit
         end
       end
@@ -96,6 +100,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:user_id, :date, :drop_off_time, :pick_up_time, activity_ids: [], durations: {}, reservation_activities_attributes: [:duration, activities: [:name, :description, :best_for_type, :best_for_size, :energy_usage, :custom]])
+    params.require(:reservation).permit(:user_id, :dog_id, :date, :drop_off_time, :pick_up_time, activity_ids: [], durations: {}, reservation_activities_attributes: [:duration, activities: [:name, :description, :best_for_type, :best_for_size, :energy_usage, :custom]])
   end
 end

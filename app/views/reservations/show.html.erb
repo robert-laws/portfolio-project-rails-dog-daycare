@@ -8,6 +8,7 @@
   <div class='column'>
     <article class='box'>
       <h4 class="title is-4">Reservation Information</h4>
+      <p><strong>Dog Name:</strong> <%= @reservation.dog.name %></p>
       <p><strong>Date:</strong> <%= format_date @reservation.date %></p>
       <p><strong>Drop Off Time:</strong> <%= format_time @reservation.drop_off_time %></p>
       <p><strong>Pick Up Time:</strong> <%= format_time @reservation.pick_up_time %></p>

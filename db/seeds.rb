@@ -46,6 +46,6 @@ end
 
 @location_4.activities << @activity_4
 
-@reservation_1 = Reservation.create(date: Date.new(2018,3,25), drop_off_time: Time.new(2018,3,25,9,0,0), pick_up_time: Time.new(2018,3,25,17,0,0), user: @user_1)
+@reservation_1 = Reservation.create(dog: @dog_1, date: Date.new(2018,3,25), drop_off_time: Time.new(2018,3,25,9,0,0), pick_up_time: Time.new(2018,3,25,17,0,0), user: @user_1)
 
 @reservation_activity_1 = ReservationActivity.create(duration: 60, reservation: @reservation_1, activity: @activity_1)

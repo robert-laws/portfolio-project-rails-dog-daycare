@@ -2,6 +2,13 @@
 
   <%= f.hidden_field :user_id, value: current_user.id %>
 
+  <div class="field">
+    <%= f.label :dog_id, class: 'label' %>
+    <div class="select">
+      <%= f.collection_select(:dog_id, @dogs, :id, :name, include_blank: 'Select a Dog') %>
+    </div>
+  </div>
+
   <div class='field'>
     <%= f.label :date, class: 'label' %>
     <div class='select'>
