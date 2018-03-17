@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :new, :create, :edit, :update] do
     resources :addresses, only: [:show, :edit, :update]
     resources :dogs, only: [:show, :new, :create, :edit, :update]
-    resources :reservations, only: [:show, :new, :create]
+    resources :reservations, only: [:show, :new, :create, :edit, :update]
   end
 
   # addresses
@@ -34,5 +34,5 @@ Rails.application.routes.draw do
   resources :activities, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   # reservations
-  resources :reservations, only: [:index]
+  resources :reservations, only: [:index, :destroy]
 end

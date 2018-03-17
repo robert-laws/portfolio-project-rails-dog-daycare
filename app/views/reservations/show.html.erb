@@ -1,1 +1,34 @@
+<%= render 'shared/flash' %>
+
 <h1 class="title">Reservation Details</h1>
+
+<div class='columns'>
+  <div class='column'>
+    <article class='box'>
+      <h4 class="title is-4">Reservation Information</h4>
+      <p><strong>Date:</strong> <%= format_date @reservation.date %></p>
+      <p><strong>Drop Off Time:</strong> <%= format_time @reservation.drop_off_time %></p>
+      <p><strong>Pick Up Time:</strong> <%= format_time @reservation.pick_up_time %></p>
+      <% if @reservation.reservation_activities.size > 0 %>
+        <hr>
+        <h4 class="title is-4">Activities Selected</h4>
+        <h5 class="title is-5">Total Activity Time: <%= @total_time %></h5>
+        <% @reservation.reservation_activities.each_with_index do |reservation_activity, index| %>
+          <h5 class="title is-5">Activity # <%= "#{index + 1}" %></h5>
+          <p><strong>Activity Name:</strong> <%= reservation_activity.activity.name %></p>
+          <p><strong>Activity Duration:</strong> <%= reservation_activity.duration %></p>
+          <hr>
+        <% end %>
+      <% else %>
+        <div class="message is-danger">
+          <div class="message-body">
+            No Activities have been selected
+          </div>
+        </div>
+        <hr>
+      <% end %>
+      <p><%= link_to 'Edit Reservation Details', edit_user_reservation_path(@user, @reservation) %></p>
+      <p><%= link_to 'Remove this Reservation', @reservation, method: :delete, data: { confirm: "Are you sure?" } %></p>
+    </div>
+  </div>
+</div>

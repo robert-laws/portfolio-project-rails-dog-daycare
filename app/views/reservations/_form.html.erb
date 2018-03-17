@@ -1,0 +1,82 @@
+<%= form_for [@user, @reservation] do |f| %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div class='field'>
+    <%= f.label :date, class: 'label' %>
+    <div class='control'>
+      <%= f.date_field :date, class: 'input', placeholder: 'Date' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :drop_off_time, class: 'label' %>
+    <div class='control'>
+      <%= f.time_field :drop_off_time, class: 'input', placeholder: 'Drop Off Time' %>
+    </div>
+  </div>
+
+  <div class='field'>
+    <%= f.label :pick_up_time, class: 'label' %>
+    <div class='control'>
+      <%= f.time_field :pick_up_time, class: 'input', placeholder: 'Pick Up Time' %>
+    </div>
+  </div>
+
+  <%= content_tag(:h5, 'Available Activities', class: 'title is-5') %>
+
+  <%= f.collection_check_boxes :activity_ids, @activities, :id, :name, {}, {:onChange=>"makeAlert(this);"} do |activity| %>
+    <div class="field">
+      <div class="control">
+        <label class="checkbox">
+          <%= activity.check_box %> <%= activity.object.name %>
+        </label>
+      </div>
+      <% if find_duration(@reservation.id, activity.object.id).to_i > 0 %>
+        <input step='15' min='15' max='120' type='number' class='input' id='duration_id_<%= activity.object.id %>' name='reservation[durations][<%= activity.object.id %>]' value='<%= find_duration(@reservation.id, activity.object.id) if @reservation.id %>'>
+      <% else %>
+        <input step='15' min='15' max='120' type='number' class='input' id='duration_id_<%= activity.object.id %>' name='reservation[durations][<%= activity.object.id %>]' value='<%= find_duration(@reservation.id, activity.object.id) if @reservation.id %>' disabled>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if params[:id].nil? %>
+    <%= content_tag(:h5, 'Or request a custom activity', class: 'title is-5') %>
+
+    <%= f.fields_for :reservation_activities, @reservation_activities do |ra_fields| %>
+
+      <%= ra_fields.fields_for :activities, @reservation.activities.build do |activity_fields| %>
+        <%= activity_fields.hidden_field :custom, value: true %>
+
+        <div class='field'>
+          <%= activity_fields.label :name, class: 'label' %>
+          <div class='control'>
+            <%= activity_fields.text_field :name, class: 'input', placeholder: 'Activity Name' %>
+          </div>
+        </div>
+
+        <div class='field'>
+          <%= activity_fields.label :description, class: 'label' %>
+          <div class='control'>
+            <%= activity_fields.text_area :description, class: 'input', placeholder: 'Activity Name' %>
+          </div>
+        </div>
+
+        <%= activity_fields.hidden_field :best_for_type, value: "custom" %>
+        <%= activity_fields.hidden_field :best_for_size, value: "custom" %>
+        <%= activity_fields.hidden_field :energy_usage, value: "custom" %>
+
+      <% end %>
+
+      <div class='field'>
+        <%= ra_fields.label :duration, class: 'label' %>
+        <div class='control'>
+          <%= ra_fields.number_field :duration, in: 15..120, step: 15, class: 'input', placeholder: 'Duration' %>
+        </div>
+      </div>
+
+    <% end %>
+  <% end %>
+
+  <%= f.submit submit_text, class: 'button is-info' %>
+<% end %>
