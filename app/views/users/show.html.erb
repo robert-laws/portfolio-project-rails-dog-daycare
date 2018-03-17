@@ -19,7 +19,9 @@
   <div class="column is-one-third">
     <article class='box'>
       <p><%= link_to 'Add a New Dog', new_user_dog_path(@user) %></p>
-      <p><%= link_to 'Add a New Reservation', new_user_reservation_path(@user) %></p>
+      <% if current_user.dogs.size > 0 %>
+        <p><%= link_to 'Add a New Reservation', new_user_reservation_path(@user) %></p>
+      <% end %>
       <p><%= link_to 'View the Most Popular Activity', activities_top_path %></p>
     </article>
   </div>
