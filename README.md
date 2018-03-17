@@ -202,37 +202,39 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [x] add controller and views for reservations -> index, show, new, edit
 - [x] add routes for controller actions -> index
 - [x] add nested routes for controller actions within a user context -> index, show, new, create, edit, update, destroy
-- [ ] setup index and show views for reservation content
+- [x] setup index and show views for reservation content
 
 ### Views
 
-- [ ] populate index and show views to display model content
-- [ ] add and begin building _form partial for reservations
-- [ ] add activity check_boxes and activity_ids with duration select field
-- [ ] add new activity fields_for nested form
-- [ ] update reservations controller for new, create, edit, and update actions
+- [x] populate index and show views to display model content
+- [x] add and begin building _form partial for reservations
+- [x] add activity check_boxes and activity_ids with duration select field
+- [x] add new activity fields_for nested form
+- [x] update reservations controller for new, create, edit, and update actions
 
 ### Destroy Action
 
-- [ ] add destroy action to controller
-- [ ] add link_to for destroy action to show view
-- [ ] redirect user to reservations_path upon destroy
+- [x] add destroy action to controller
+- [x] add link_to for destroy action to show view
+- [x] redirect user to reservations_path upon destroy
 
 ### Reservation Integrations
 
 #### Displaying and Sorting Reservations
 
-- [ ] incorporate reservations into users#show account information
+- [x] incorporate reservations into users#show account information
 - [ ] create a sortable reservations table for listing all user reservations -> incorporating the ability
 
 #### Administering Reservations
 
-- [ ] allow user to initiate a show, new, edit, or destroy controller action from their account page
-- [ ] add these controller actions to the reservations table 
+- [x] allow user to initiate a show, new, edit, or destroy controller action from their account page
+- [ ] add these controller actions to the reservations table
 
 #### Reservations Helpers
 
-- [ ] add reservations helpers -> date display
-- [ ] add reservations helpers -> time display
+- [x] add reservations helpers -> date display
+- [x] add reservations helpers -> time display
 - [ ] add reservations helpers -> calculation of costs
 - [ ] add reservations helpers -> display of costs and totals
+- [x] add top activity class method to Activity
+- [x] create view located at /activities/top to display result from top activity class method
