@@ -44,7 +44,7 @@
   </div>
 
   <%= f.fields_for(:addresses) do |address_fields| %>
-    <h5>User Address</h5>
+    <h5 class="title is-5">User Address</h5>
     <%= address_fields.hidden_field :id %>
 
     <div class='field'>
@@ -83,8 +83,9 @@
     </div>
   <% end %>
 
+  <h5 class="title is-5">Dog Information</h5>
   <%= f.fields_for(:dogs) do |dog_fields| %>
-    <h5>Dog # <%= dog_fields.index + 1 %></h5>
+    <h5 class="title is-5">Dog # <%= dog_fields.index + 1 %></h5>
     <%= dog_fields.hidden_field :id %>
 
     <div class='field'>
