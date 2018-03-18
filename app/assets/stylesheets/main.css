@@ -19,6 +19,23 @@ body {
   flex: 1;
 }
 
+.has-bg-img { 
+  background: url('/assets/bg-img-2.jpg') center center;
+  background-size: cover; 
+}
+
+.home-page-title {
+  background-color: rgba(27, 25, 25, 0.5);
+  height: 100px;
+  width: 400px;
+  padding: 25px;
+}
+
+.home-img {
+  width: 360px;
+  height: 360px;
+}
+
 .is-footer {
   border-top: 1px solid rgba(193, 193, 193, 0.5);
 }

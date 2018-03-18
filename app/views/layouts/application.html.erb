@@ -58,7 +58,7 @@
     </nav>
 
     <% if current_path.nil? %>
-      <section class="hero is-primary is-medium">
+      <section class="hero is-primary is-medium has-bg-img">
         <div class="hero-body">
           <div class="container">
             <%= yield %>
@@ -69,11 +69,31 @@
         <div class="hero-body">
           <div class="container">
             <div class="columns">
-              <div class="column is-half">              
-                Image Placeholder
+              <div class="column is-half">
+                <div class="columns">
+                  <div class="column"></div>
+                  <div class="column">
+                    <figure class="image home-img">
+                      <%= image_tag("home-img.jpg", alt: 'Dog Daycare Information') %>
+                    </figure>
+                  </div>
+                  <div class="column"></div>
+                </div>
               </div>
               <div class="column is-half">
-                Content...
+                <div class="content">
+                  <h4 class="title is-4">The Dog Daycare Concept</h4>
+                  <p class="spacer">We want you to have peace of mind when you leave your dog with us.</p>
+                  <p class="spacer">Our services include:</p>
+                  <ul>
+                    <li>A flexible reservation system focused on your needs</li>
+                    <li>Several locatoins around the region</li>
+                    <li>A range of activities to choose for your dog</li>
+                    <li>The ability to request custom activities to fit your needs</li>
+                    <li>We can handle between 1 and 3 dogs per owner</li>
+                  </ul>
+                  <p><%= link_to 'Read more', about_path, class: 'has-text-link' %> about the Dog Daycare story and philosophy.</p>
+                </div>
               </div>
             </div>
           </div>

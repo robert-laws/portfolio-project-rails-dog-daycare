@@ -238,4 +238,4 @@ This repository includes all the work for my flatiron school portfolio project. 
 - [ ] add reservations helpers -> display of costs and totals
 - [x] add top activity class method to Activity
 - [x] create view located at /activities/top to display result from top activity class method
-- [ ] clean up page prompting user account update and form for a user account update
+- [x] clean up page prompting user account update and form for a user account update

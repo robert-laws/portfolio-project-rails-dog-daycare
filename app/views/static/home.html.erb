@@ -1,8 +1,14 @@
 <%= provide(:title, 'Home') %>
-
-<h1 class="title">
-  Dog Daycare
-</h1>
-<h2 class="subtitle">
-  <%= @greeting %>
-</h2>
+<div class="home-page-title">
+  <h1 class="title">
+    Dog Daycare
+  </h1>
+  <h2 class="subtitle">
+    <%= @greeting %>
+  </h2>
+  <% if !current_user %>
+    <a href="<%= new_user_path %>" class="button is-large is-primary">
+      <span>Sign Up Today</span>
+    </a>
+  <% end %>
+</div>

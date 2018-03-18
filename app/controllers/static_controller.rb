@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
   def home
-    @greeting = "hello there!"
+    @greeting = "Your dog is in good hands with us"
   end
 
   def about
