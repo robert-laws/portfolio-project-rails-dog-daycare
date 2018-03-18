@@ -9,6 +9,31 @@ h5 {
   margin-bottom: 12px !important;
 }
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+  
+#wrapper {
+  flex: 1;
+}
+
+.is-footer {
+  border-top: 1px solid rgba(193, 193, 193, 0.5);
+}
+
+.fa-home:before, .fa-twitter:before, .fa-github:before, .fa-facebook:before {
+  margin-right: 12px;
+  font-size: 1.75em;
+}
+
+/** Spacer **/
+
+.spacer {
+  margin: 10px 0;
+}
+
 /** Navigation Overrides **/
 
 a.navbar-item.is-active {

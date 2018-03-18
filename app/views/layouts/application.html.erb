@@ -12,7 +12,7 @@
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="<%= root_path %>">
-          <%= image_tag('dog-daycare-placeholder.png', size: '28x28', alt: 'Dog Daycare Home') %>
+          <%= render partial: 'shared/logo_image', locals: { img_src: "dog-daycare-placeholder.png", dimension: 28 } %>
         </a>
 
         <div class="navbar-burger" data-target="navMenu">
@@ -65,13 +65,66 @@
           </div>
         </div>
       </section>
+      <section id="wrapper" class="hero is-medium is-light is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns">
+              <div class="column is-half">              
+                Image Placeholder
+              </div>
+              <div class="column is-half">
+                Content...
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     <% else %>
-      <section class="section">
+      <section id="wrapper" class="section">
         <div class="container">
           <%= yield %>
         </div>
       </section>
     <% end %>
+
+    <section class="hero is-primary is-footer">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column">
+              <p><strong>Dog Daycare</strong></p>
+              <div class="spacer">
+                <%= render partial: 'shared/logo_image', locals: { img_src: "dog-daycare-placeholder.png", dimension: 56 } %>
+              </div>
+              <p>Your dog is our priority</p>
+            </div>
+            <div class="column is-one-fifth">
+              &nbsp;
+            </div>
+            <div class="column">
+              <p><strong>Designed by</strong></p>
+              <p>Robert Laws, 2018</p>
+              <div class="spacer">
+                <a href="www.robdlaws.com" title="personal website"><%= fa_icon "home" %></a>
+                <a href="www.twitter.com" title="Twitter"><%= fa_icon "twitter" %></a>
+                <a href="www.github.com" title="Github"><%= fa_icon "github" %></a>
+                <a href="www.facebook.com" title="Facebook"><%= fa_icon "facebook" %></a>
+              </div>
+            </div>
+            <div class="column is-one-fifth">
+              &nbsp;
+            </div>
+            <div class="column">
+              <p><strong>Contact</strong></p>
+              <p>Robert Laws</p>
+              <div class="spacer">
+                <span><a href="mailto:roblaws@me.com"><%= fa_icon "envelope-open" %> roblaws@me.com</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </body>
 </html>
