@@ -288,3 +288,5 @@ The list below tracks the progress on the project and the components completed.
 - [x] add top activity class method to Activity
 - [x] create view located at /activities/top to display result from top activity class method
 - [x] clean up page prompting user account update and form for a user account update
+
+[Link to LICENSE](https://github.com/robert-laws/portfolio-project-rails-dog-daycare/blob/master/LICENSE)
