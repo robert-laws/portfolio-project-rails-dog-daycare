@@ -1,15 +1,20 @@
 <%= form_for @user do |f| %>
-  <div class='field'>
-    <%= f.label :username, class: 'label' %>
-    <div class='control'>
-      <%= f.text_field :username, class: 'input', placeholder: 'Username' %>
+  <div class="columns first_last_fields">
+    <div class="column">
+      <div class='field'>
+        <%= f.label :first_name, class: 'label' %>
+        <div class='control'>
+          <%= f.text_field :first_name, class: 'input', placeholder: 'First Name' %>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class='field'>
-    <%= f.label :password, class: 'label' %>
-    <div class='control'>
-      <%= f.password_field :password, class: 'input', placeholder: 'Password' %>
+    <div class="column">
+      <div class='field'>
+        <%= f.label :last_name, class: 'label' %>
+        <div class='control'>
+          <%= f.text_field :last_name, class: 'input', placeholder: 'Last Name' %>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -18,30 +23,34 @@
     <div class='control'>
       <%= f.text_field :email, class: 'input', placeholder: 'Email' %>
     </div>
-  </div>
+  </div> 
 
   <div class='field'>
-    <%= f.label :first_name, class: 'label' %>
+    <%= f.label :username, class: 'label' %>
     <div class='control'>
-      <%= f.text_field :first_name, class: 'input', placeholder: 'First Name' %>
+      <%= f.text_field :username, class: 'input', placeholder: 'Username' %>
     </div>
   </div>
 
-  <div class='field'>
-    <%= f.label :last_name, class: 'label' %>
-    <div class='control'>
-      <%= f.text_field :last_name, class: 'input', placeholder: 'Last Name' %>
+  <% if !@profile_edit %>
+    <div class='field'>
+      <%= f.label :password, class: 'label' %>
+      <div class='control'>
+        <%= f.password_field :password, class: 'input', placeholder: 'Password' %>
+      </div>
     </div>
-  </div>
+  <% end %>  
 
-  <div class="field">
-    <div class="control">
-      <label class="checkbox">
-        <%= f.check_box :admin %>
-        Check is this is an admin account
-      </label>
+  <% if false %>
+    <div class="field">
+      <div class="control">
+        <label class="checkbox">
+          <%= f.check_box :admin %>
+          Check is this is an admin account
+        </label>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <%= f.fields_for(:addresses) do |address_fields| %>
     <h5 class="title is-5">User Address</h5>
@@ -83,8 +92,8 @@
     </div>
   <% end %>
 
-  <h5 class="title is-5">Dog Information</h5>
   <%= f.fields_for(:dogs) do |dog_fields| %>
+    <h5 class="title is-5">Dog Information</h5>
     <h5 class="title is-5">Dog # <%= dog_fields.index + 1 %></h5>
     <%= dog_fields.hidden_field :id %>
 

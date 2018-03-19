@@ -4,6 +4,10 @@
   padding: 2rem
 }
 
+.first_last_fields {
+  margin-bottom: 0 !important;
+}
+
 h5 {
   margin-top: 24px !important;
   margin-bottom: 12px !important;
