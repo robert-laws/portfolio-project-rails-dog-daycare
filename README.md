@@ -1,10 +1,59 @@
 # Portfolio Project - Ruby on Rails - Dog Daycare
 
-Porject description... to come soon...
+## Description
 
-# Work in Progress
+This project is for a dog daycare service called [Dog Daycare](https://rails-dog-daycare.herokuapp.com). The service allows dog owners to signup for a user account. Once logged into the website, a user can update their account with an address and attach between 1 to 3 dogs to their account. Once their account has been updated, users can make reservations for their dog(s) to stay at the dog daycare. Within a reservation, users have the ability to select from a range of pre-defined activities, designate the length of time for each activity, and request a custom activity they define if desired.
 
-This repository includes all the work for my flatiron school portfolio project. As the project progresses, additional phases will be added to the work in progress section.
+Users can also view all the locations and activities available on individual pages. The user has the ability to apply filters on both the locations and activities pages if they want to see the available locations or activities based on filtered criteria.
+
+Users have full abilitity to edit their user account including editing their personal information, viewing, creating, updating, and deleting dogs or reservations attached to their user account.
+
+## Installation
+
+TO install the application, follow these steps:
+
+1. Fork and/or clone the [repository](https://github.com/robert-laws/portfolio-project-rails-dog-daycare.git)
+
+1. From the root of the application folder, run ``bundle install``
+
+1. Migrate the database using the command ``bundle exec rake db:migrate``
+
+1. Seed the database with sample data using the command ``bundle exec rake db:seed``
+
+1. Run ``bundle exec rails server`` to startup the local server and navigate to localhost:3000 to view the running application
+
+## Contributing
+
+Please refer to each project's style guidelines and guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
+
+1. Fork the repo on GitHub
+1. Clone the project to your own machine
+1. Commit changes to your own branch
+1. Push your work back up to your fork
+1. Submit a Pull request so that your changes can be reviewed
+
+## Licensing
+
+The MIT License (MIT)
+
+Copyright (c) 2018 Robert Laws
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Work Progress
+
+The list below tracks the progress on the project and the components completed.
 
 ## Phase 1
 
