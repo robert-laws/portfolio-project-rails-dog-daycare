@@ -1,34 +1,39 @@
 <%= provide(:title, 'Edit User') %>
 
-<h1 class="title">Edit Your User Account</h1>
+<div class="columns is-mobile is-centered">
+  <div class="column is-three-quarters is-narrow">
 
-<%= render 'shared/flash' %>
+    <h1 class="title">Edit Your User Account</h1>
 
-<%= render partial: 'user_type' %>
+    <%= render 'shared/flash' %>
 
-<h5 class="title is-5">
-  <%= "Hello, #{current_user.username}!" %>
-</h5>
-<% if @profile_edit && @number == 0 %>
-  <p>please take some time to add more information to your profile. First, select the number of dogs (between 1 and 3) you would like to add to your account. Once you have added dogs and saved your updated profile, you will be able to make reservations.</p>
-<% end %>
+    <%= render partial: 'user_type' %>
 
-<hr>
+    <h5 class="title is-5">
+      <%= "Hello, #{current_user.username}!" %>
+    </h5>
+    <% if @profile_edit && @number == 0 %>
+      <p>please take some time to add more information to your profile. First, select the number of dogs (between 1 and 3) you would like to add to your account. Once you have added dogs and saved your updated profile, you will be able to make reservations.</p>
+    <% end %>
 
-<% if @profile_edit && @number == 0 %>
+    <hr>
 
-  <h5 class="title is-5">How many dogs do you have?</h5>
+    <% if @profile_edit && @number == 0 %>
 
-  <%= link_to "One Dog", edit_user_path(@user, dog_count: 1), method: :get, class: "button is-primary" %>
+      <h5 class="title is-5">How many dogs do you have?</h5>
 
-  <%= link_to "Two Dogs", edit_user_path(@user, dog_count: 2), method: :get, class: "button is-primary" %>
+      <%= link_to "One Dog", edit_user_path(@user, dog_count: 1), method: :get, class: "button is-primary" %>
 
-  <%= link_to "Three Dogs", edit_user_path(@user, dog_count: 3), method: :get, class: "button is-primary" %>
+      <%= link_to "Two Dogs", edit_user_path(@user, dog_count: 2), method: :get, class: "button is-primary" %>
 
-<% else %>
+      <%= link_to "Three Dogs", edit_user_path(@user, dog_count: 3), method: :get, class: "button is-primary" %>
 
-  <%= render partial: 'shared/form_errors', object: @user, as: 'obj' %>
+    <% else %>
 
-  <%= render partial: 'form', locals: { submit_text: "Update your profile" } %>
+      <%= render partial: 'shared/form_errors', object: @user, as: 'obj' %>
 
-<% end %>
+      <%= render partial: 'form', locals: { submit_text: "Update your profile" } %>
+
+    <% end %>
+  </div>
+</div>

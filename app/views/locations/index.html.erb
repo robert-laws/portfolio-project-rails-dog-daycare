@@ -156,9 +156,7 @@
 
 <hr>
 
-<%= render partial: 'users/user_type' %>
-
-<%= render partial: 'users/user_functions', locals: { user: current_user, path: current_path } %>
+<%= render partial: 'users/user_functions', locals: { user: current_user, path: current_path, headline: "Admin Functions for Locations" } %>
 
 <div class="columns is-multiline wrapping">
   <% if @locations.size > 0 %>

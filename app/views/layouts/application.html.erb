@@ -12,7 +12,7 @@
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="<%= root_path %>">
-          <%= render partial: 'shared/logo_image', locals: { img_src: "dog-daycare-placeholder.png", dimension: 28 } %>
+          <%= render partial: 'shared/logo_image', locals: { img_src: "dog-daycare-logo-3.png", dimension: 28 } %>
         </a>
 
         <div class="navbar-burger" data-target="navMenu">
@@ -23,7 +23,7 @@
       </div>
       <div class="navbar-menu" id="navMenu">
         <div class="navbar-start">
-          <%= link_to 'Home', root_path, class: "navbar-item #{'is-active' if current_path.nil?}" %>
+          <%#= link_to 'Home', root_path, class: "navbar-item #{'is-active' if current_path.nil?}" %>
           <%= link_to 'About', about_path, class: "navbar-item #{'is-active' if current_path == 'about'}" %>
           <%= link_to 'Locations', locations_path, class: "navbar-item #{'is-active' if current_path == 'locations'}" %>
           <%= link_to 'Activities', activities_path, class: "navbar-item #{'is-active' if current_path == 'activities'}" %>
@@ -66,8 +66,14 @@
         </div>
       </section>
       <section id="wrapper" class="hero is-medium is-light is-bold">
-        <div class="hero-body">
+        <div class="hero-body top-collapse">
           <div class="container">
+            <div class="columns is-centered">
+              <div class="column is-three-quarters is-narrow homepage-headline">
+                <h4 class="title is-4 has-text-centered">Services & Features</h4>
+                <p class="has-text-centered"><em>We're at your service - giving you peace of mind and your dog lots of fun</em></p>
+              </div>
+            </div>
             <div class="columns">
               <div class="column is-half">
                 <div class="columns">

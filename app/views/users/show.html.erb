@@ -2,11 +2,9 @@
 
 <%= render 'shared/flash' %>
 
-<h1 class="title">User Details</h1>
+<h1 class="title">Welcome, <%= full_name @user %>!</h1>
 
-<%= render partial: 'user_type' %>
-
-<%= render partial: 'user_functions', locals: { user: current_user, path: current_path } %>
+<%= render partial: 'user_functions', locals: { user: current_user, path: current_path, headline: "Admin Function" } %>
 
 <div class='columns'>
   <div class='column'>

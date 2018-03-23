@@ -23,6 +23,19 @@ body {
   flex: 1;
 }
 
+.top-collapse {
+  padding-top: 0 !important;
+}
+
+.homepage-headline {
+  margin: 30px;
+}
+
+.homepage-headline h4 {
+  margin-top: 0.5em !important;
+  margin-bottom: 0.2em !important;
+}
+
 .has-bg-img { 
   background: url('/assets/bg-img-2.jpg') center center;
   background-size: cover; 

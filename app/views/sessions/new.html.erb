@@ -1,29 +1,35 @@
 <%= provide(:title, 'Sign In') %>
 
-<h1 class="title">Sign In Form</h1>
+<div class="columns is-mobile is-centered">
+  <div class="column is-three-quarters is-narrow">
 
-<%= render 'shared/flash' %>
+    <h1 class="title">Sign In Form</h1>
 
-<%= form_for(@user, url: sessions_create_path(@user), method: :post) do |f| %>
-  <div class='field'>
-    <%= f.label :username, class: 'label' %>
-    <div class='control'>
-      <%= f.text_field :username, class: 'input', placeholder: 'Username' %>
-    </div>
+    <%= render 'shared/flash' %>
+
+    <%= form_for(@user, url: sessions_create_path(@user), method: :post) do |f| %>
+      <div class='field'>
+        <%= f.label :username, class: 'label' %>
+        <div class='control'>
+          <%= f.text_field :username, class: 'input', placeholder: 'Username' %>
+        </div>
+      </div>
+
+      <div class='field'>
+        <%= f.label :password, class: 'label' %>
+        <div class='control'>
+          <%= f.password_field :password, class: 'input', placeholder: 'Password' %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <%= f.submit 'Submit', class: 'button is-info' %>
+        </div>
+      </div>  
+    <% end %>
+    <br>
+    <%= link_to 'Sign In via Github', '/auth/github' %>
+
   </div>
-
-  <div class='field'>
-    <%= f.label :password, class: 'label' %>
-    <div class='control'>
-      <%= f.password_field :password, class: 'input', placeholder: 'Password' %>
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="control">
-      <%= f.submit 'Submit', class: 'button is-info' %>
-    </div>
-  </div>  
-<% end %>
-<br>
-<%= link_to 'Sign In via Github', '/auth/github' %>
+</div>

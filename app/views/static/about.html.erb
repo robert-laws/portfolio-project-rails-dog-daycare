@@ -1,21 +1,28 @@
 <%= provide(:title, 'About') %>
 
-<h1 class="title">About Dog Daycare</h1>
-
-<div class='columns'>
-  <div class='column'>
+<div class='columns is-mobile is-centered'>
+  <div class='column is-three-quarters is-narrow'>
+    <h1 class="title">About Dog Daycare</h1>
     <div class="content">
-      <h5 class="title is-4">The Dog Daycare Concept</h5>
       <p>Dog Daycare is a place for your dog to be active, curious, socialable, and safe while you are at work or away.</p>
       <p>Dog owners who work or have to be somewhere without their dog can rely on Dog Daycare to take care of their dog and provide your dog with lots of attention and activities.</p>
     </div>
   </div>
 </div>
 
-<div class='columns'>
-  <div class='column'>
-    <%= image_tag("about-img.jpg", alt: 'Dog Daycare About') %>
-    <br>
-    <span>Dog enjoying pool time</span>
+<div class='columns is-mobile is-centered'>
+  <div class='column is-half is-narrow has-text-centered'>
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <%= image_tag("about-img.jpg", alt: 'Dog Daycare About') %>
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <span>Dog enjoying pool time</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

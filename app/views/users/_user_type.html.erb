@@ -3,14 +3,17 @@
     <!-- Left side -->
     <div class="level-left">
       <div class="level-item">
+        <h4 class="title is-4"><%= headline %></h4>
+      </div>
+      <div class="level-item">
         <% if admin_user %>
           <div class="tags has-addons">
-            <span class="tag is-dark">Your Account</span>
+            <span class="tag is-dark">Your Account Type</span>
             <span class="tag is-success">Admin</span>
           </div>
         <% else %>
           <div class="tags has-addons">
-            <span class="tag is-dark">Your Account</span>
+            <span class="tag is-dark">Your Account Type</span>
             <span class="tag is-success">Regular</span>
           </div>
         <% end %>
