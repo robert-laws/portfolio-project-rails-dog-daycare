@@ -18,6 +18,10 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
+
+.columns.col-height-all .column .box {
+  min-height: 270px;
+}
   
 #wrapper {
   flex: 1;

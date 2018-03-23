@@ -6,30 +6,18 @@
 
 <%= render partial: 'user_functions', locals: { user: current_user, path: current_path, headline: "Admin Function" } %>
 
-<div class='columns'>
-  <div class='column'>
+<div class='columns col-height-all'>
+  <div class='column is-one-third'>
     <article class='box'>
       <h4 class='title'><%= @user.first_name %> <%= @user.last_name %></h4>
       <p><strong>Username:</strong> <%= @user.username %></p>
       <p><strong>Email:</strong> <%= @user.email %></p>
     </article>
   </div>
-  <div class="column is-one-third">
-    <article class='box'>
-      <p><%= link_to 'Edit Your User Account', edit_user_path(@user) %></p>
-      <p><%= link_to 'Add a New Dog', new_user_dog_path(@user) %></p>
-      <% if current_user.dogs.size > 0 %>
-        <p><%= link_to 'Add a New Reservation', new_user_reservation_path(@user) %></p>
-      <% end %>
-      <p><%= link_to 'View the Most Popular Activity', activities_top_path %></p>
-    </article>
-  </div>
-</div>
-<div class='columns'>
-  <div class='column'>
+  <div class='column is-one-third'>
     <% @addresses.each do |address| %>
       <article class='box'>
-        <h4 class='title'>Address</h4>
+        <h4 class='title is-5'>Address</h4>
         <p><strong>Street:</strong> <%= address.street_1 %></p>
         <% if address.street_2.present? %>
           <p><strong>Street:</strong> <%= address.street_2 %></p>
@@ -42,12 +30,25 @@
       </article>
     <% end %>
   </div>
+  <div class="column is-one-third">
+    <article class='box'>
+      <h4 class="title is-5">Account Actions</h4>
+      <p><%= link_to 'Edit Your User Account', edit_user_path(@user) %></p>
+      <p><%= link_to 'Add a New Dog', new_user_dog_path(@user) %></p>
+      <% if current_user.dogs.size > 0 %>
+        <p><%= link_to 'Add a New Reservation', new_user_reservation_path(@user) %></p>
+      <% end %>
+      <p><%= link_to 'View the Most Popular Activity', activities_top_path %></p>
+    </article>
+  </div>
 </div>
+
 <div class='columns'>
-  <% @dogs.each do |dog| %>
-    <div class='column'>
+  <div class='column is-half'>
+    <h4 class="title is-4">Dogs</h4>
+    <% @dogs.each do |dog| %>
       <article class='box'>
-        <h4 class='title'><%= link_to dog.name, user_dog_path(@user, dog) %></h4>
+        <h4 class='title is-5'><%= link_to dog.name, user_dog_path(@user, dog) %></h4>
         <p><strong>Name:</strong> <%= dog.breed %></p>
         <p><strong>Age:</strong> <%= years_old dog %></p>
         <p><strong>Sex:</strong> <%= dog.sex %></p>
@@ -56,21 +57,21 @@
         <p><%= link_to 'Edit Dog Details', edit_user_dog_path(@user, dog) %></p>
         <p><%= link_to 'Remove this Dog', dog, method: :delete, data: { confirm: "Are you sure?" } %></p>
       </article>
-    </div>
-  <% end %>
-</div>
-<div class='columns'>
+    <% end %>
+  </div>
+
   <% if @reservations.size > 0 %>
     <% @reservations.each_with_index do |reservation, index| %>
-      <div class='column'>
+      <div class='column is-half'>
+        <h4 class="title is-4">Reservations</h4>
         <article class='box'>
-          <h4 class='title'><%= link_to "Reservation # #{index + 1}", user_reservation_path(@user, reservation) %></h4>
+          <h4 class='title is-5'><%= link_to "Reservation # #{index + 1}", user_reservation_path(@user, reservation) %></h4>
           <p><strong>Date:</strong> <%= format_date reservation.date %></p>
           <p><strong>Drop Off Time:</strong> <%= format_time reservation.drop_off_time %></p>
           <p><strong>Pick Up Time:</strong> <%= format_time reservation.pick_up_time %></p>
           <% if reservation.reservation_activities.size > 0 %>
             <hr>
-            <h4 class="title is-4">Activities Selected</h4>
+            <h4 class="title is-5">Activities selected for this reservation</h4>
             <% reservation.reservation_activities.each_with_index do |reservation_activity, index| %>
               <h5 class="title is-5">Activity # <%= "#{index + 1}" %></h5>
               <p><strong>Activity Name:</strong> <%= reservation_activity.activity.name %></p>
