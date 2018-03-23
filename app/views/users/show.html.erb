@@ -10,6 +10,7 @@
   <div class='column is-one-third'>
     <article class='box'>
       <h4 class='title'><%= @user.first_name %> <%= @user.last_name %></h4>
+      <%= image_tag('user_profile.jpg', alt: 'User Profile Image', class: 'is-pulled-right user-image') %>
       <p><strong>Username:</strong> <%= @user.username %></p>
       <p><strong>Email:</strong> <%= @user.email %></p>
     </article>
@@ -49,6 +50,7 @@
     <% @dogs.each do |dog| %>
       <article class='box'>
         <h4 class='title is-5'><%= link_to dog.name, user_dog_path(@user, dog) %></h4>
+        <%= image_tag('dog_profile.jpg', alt: 'Dog Profile Image', class: 'is-pulled-right user-dog-image') %>
         <p><strong>Name:</strong> <%= dog.breed %></p>
         <p><strong>Age:</strong> <%= years_old dog %></p>
         <p><strong>Sex:</strong> <%= dog.sex %></p>

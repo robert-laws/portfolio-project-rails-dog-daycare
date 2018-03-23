@@ -66,6 +66,20 @@ body {
   font-size: 1.75em;
 }
 
+.user-image {
+  width: 150px !important;
+  margin-top: -55px;
+  border: 1px solid #555;
+  border-radius: 6px;
+}
+
+.user-dog-image {
+  width: 150px !important;
+  margin-top: -50px;
+  border: 1px solid #555;
+  border-radius: 6px;
+}
+
 /** Spacer **/
 
 .spacer {
