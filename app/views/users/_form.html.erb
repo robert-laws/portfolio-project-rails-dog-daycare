@@ -70,26 +70,32 @@
       </div>
     </div>
 
-    <div class='field'>
-      <%= address_fields.label :city, class: 'label' %>
-      <div class='control'>
-        <%= address_fields.text_field :city, class: 'input', placeholder: 'City' %>
+    <div class="columns first_last_fields">
+      <div class="column is-half">
+        <div class='field'>
+          <%= address_fields.label :city, class: 'label' %>
+          <div class='control'>
+            <%= address_fields.text_field :city, class: 'input', placeholder: 'City' %>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class='field'>
-      <%= address_fields.label :state, class: 'label' %>
-      <div class='control'>
-        <%= address_fields.text_field :state, class: 'input', placeholder: 'State' %>
+      <div class="column">
+        <div class='field'>
+          <%= address_fields.label :state, class: 'label' %>
+          <div class='control'>
+            <%= address_fields.text_field :state, class: 'input', placeholder: 'State' %>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class='field'>
-      <%= address_fields.label :zip_code, class: 'label' %>
-      <div class='control'>
-        <%= address_fields.text_field :zip_code, class: 'input', placeholder: 'Zip Code' %>
+      <div class="column is-one-third">
+        <div class='field'>
+          <%= address_fields.label :zip_code, class: 'label' %>
+          <div class='control'>
+            <%= address_fields.text_field :zip_code, class: 'input', placeholder: 'Zip Code' %>
+          </div>
+        </div>
       </div>
-    </div>
+    </div>    
   <% end %>
 
   <%= f.fields_for(:dogs) do |dog_fields| %>

@@ -7,11 +7,8 @@
 
     <%= render 'shared/flash' %>
 
-    <%= render partial: 'user_type' %>
+    <%= render partial: 'user_type', locals: { headline: "Hello, #{current_user.username}!" } %>
 
-    <h5 class="title is-5">
-      <%= "Hello, #{current_user.username}!" %>
-    </h5>
     <% if @profile_edit && @number == 0 %>
       <p>please take some time to add more information to your profile. First, select the number of dogs (between 1 and 3) you would like to add to your account. Once you have added dogs and saved your updated profile, you will be able to make reservations.</p>
     <% end %>
