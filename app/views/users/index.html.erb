@@ -2,7 +2,7 @@
 
 <h1 class="title">All Users</h1>
 
-<%= render partial: 'user_type' %>
+<%= render partial: 'user_type', locals: { headline: "Hello, #{current_user.username}!" }  %>
 
 <h1 class="subtitle"><%= pluralize(@users.size, "User") %></h1>
 
