@@ -62,10 +62,10 @@
     <% end %>
   </div>
 
-  <% if @reservations.size > 0 %>
-    <% @reservations.each_with_index do |reservation, index| %>
-      <div class='column is-half'>
-        <h4 class="title is-4">Reservations</h4>
+  <div class='column is-half'>
+    <h4 class="title is-4">Reservations</h4>
+    <% if @reservations.size > 0 %>
+      <% @reservations.each_with_index do |reservation, index| %>
         <article class='box'>
           <h4 class='title is-5'><%= link_to "Reservation # #{index + 1}", user_reservation_path(@user, reservation) %></h4>
           <p><strong>Date:</strong> <%= format_date reservation.date %></p>
@@ -91,15 +91,13 @@
           <p><%= link_to 'Edit Reservation Details', edit_user_reservation_path(@user, reservation) %></p>
           <p><%= link_to 'Remove this Reservation', reservation, method: :delete, data: { confirm: "Are you sure?" } %></p>
         </article>
-      </div>
-    <% end %>
-  <% else %>
-    <div class="column">
+      <% end %>
+    <% else %>
       <article class="message is-danger">
         <div class="message-body">
           No reservations found...
         </div>
       </article>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
