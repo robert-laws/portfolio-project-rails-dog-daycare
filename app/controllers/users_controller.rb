@@ -44,7 +44,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    # @user.skip_password_validation = true
     if @user.update(user_params)
       session[:profile] = false
       redirect_to user_path(@user), notice: "Your profile has been updated successfully"

@@ -5,8 +5,6 @@
 
     <h1 class="title">New User Form</h1>
 
-    <%= render partial: 'user_type', locals: { headline: "Hello, #{current_user.username}!" }  %>
-
     <%= render partial: 'shared/form_errors', object: @user, as: 'obj' %>
 
     <%= render partial: 'form', locals: { submit_text: "Sign Up" } %>

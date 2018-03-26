@@ -8,9 +8,9 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :addresses
   accepts_nested_attributes_for :dogs
 
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true, format: { without: /\s/, message: "must be a single word" }
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
-  # validates :password, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, unless: :user_created
   # validates :first_name, presence: true
   # validates :last_name, presence: true
 
@@ -51,5 +51,11 @@ class User < ApplicationRecord
         end
       end
     end
+  end
+
+  private
+
+  def user_created
+    self.id.present?
   end
 end
