@@ -37,11 +37,13 @@ class ApplicationController < ActionController::Base
   end
 
   def require_permission
+    # verifies that id for the currently logged in user matches the id param for the user#show view
     if current_user != User.find(params[:id])
       redirect_to root_path unless admin?
     end
   end
 
+  # declare helper methods for availability inside views
   helper_method :current_user
   helper_method :current_path
   helper_method :require_permission

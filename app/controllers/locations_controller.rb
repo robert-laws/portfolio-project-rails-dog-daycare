@@ -13,7 +13,7 @@ class LocationsController < ApplicationController
     open_year_max = params["max_open_year"].present? ? params["max_open_year"].to_i : Location.max_value("open_year")
     @locations = @locations.values_between("open_year", open_year_min, open_year_max) unless open_year_max < open_year_min
     city = params["city"] if params["city"].present?
-    @locations = @locations.select_by_city(city) unless city.nil? 
+    @locations = @locations.select_by_city(city) unless city.nil?
   end
 
   def show

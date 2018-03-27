@@ -10,10 +10,14 @@ class Activity < ApplicationRecord
   validates :energy_usage, presence: true
 
   scope :uniq_values, ->(column){ distinct.pluck(column).delete_if{|e| [] << e if e == "custom"}.sort }
-  scope :all_except_custom, -> { where("custom = ?", false) }  
+  scope :all_except_custom, -> { where("custom = ?", false) }
 
   def self.by_select(which_column, value)
     where("#{which_column} = ?", value)
+  end
+
+  def self.columns
+    ["best_for_size", "best_for_type", "energy_usage"]
   end
 
   def self.top
