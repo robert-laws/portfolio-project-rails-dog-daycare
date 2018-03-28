@@ -16,18 +16,26 @@
     </article>
   </div>
   <div class='column is-one-third'>
-    <% @addresses.each do |address| %>
-      <article class='box'>
-        <h4 class='title is-5'>Address</h4>
-        <p><strong>Street:</strong> <%= address.street_1 %></p>
-        <% if address.street_2.present? %>
-          <p><strong>Street:</strong> <%= address.street_2 %></p>
-        <% end %>
-        <p><strong>City:</strong> <%= address.city %></p>
-        <p><strong>State:</strong> <%= address.state %></p>
-        <p><strong>Zip Code:</strong> <%= address.zip_code %></p>
-        <hr>
-        <p><%= link_to 'Edit Address Details', edit_user_address_path(@user, address) %></p>
+    <% if @addresses.size > 0 %>
+      <% @addresses.each do |address| %>
+        <article class='box'>
+          <h4 class='title is-5'>Address</h4>
+          <p><strong>Street:</strong> <%= address.street_1 %></p>
+          <% if address.street_2.present? %>
+            <p><strong>Street:</strong> <%= address.street_2 %></p>
+          <% end %>
+          <p><strong>City:</strong> <%= address.city %></p>
+          <p><strong>State:</strong> <%= address.state %></p>
+          <p><strong>Zip Code:</strong> <%= address.zip_code %></p>
+          <hr>
+          <p><%= link_to 'Edit Address Details', edit_user_address_path(@user, address) %></p>
+        </article>
+      <% end %>
+    <% else %>
+      <article class="message is-danger">
+        <div class="message-body">
+          No addresses found...
+        </div>
       </article>
     <% end %>
   </div>
@@ -35,6 +43,11 @@
     <article class='box'>
       <h4 class="title is-5">Account Actions</h4>
       <p><%= link_to 'Edit Your User Account', edit_user_path(@user) %></p>
+      <% if @user.addresses.size > 0 %>
+        <p><%= link_to 'Edit Address Details', edit_user_address_path(@user, @user.addresses.first) %></p>
+      <% else %>
+        <p><%= link_to 'Add a New Address', new_user_address_path(@user) %></p>        
+      <% end %>
       <p><%= link_to 'Add a New Dog', new_user_dog_path(@user) %></p>
       <% if current_user.dogs.size > 0 %>
         <p><%= link_to 'Add a New Reservation', new_user_reservation_path(@user) %></p>
@@ -47,17 +60,25 @@
 <div class='columns'>
   <div class='column is-half'>
     <h4 class="title is-4">Dogs</h4>
-    <% @dogs.each do |dog| %>
-      <article class='box'>
-        <h4 class='title is-5'><%= link_to dog.name, user_dog_path(@user, dog) %></h4>
-        <%= image_tag('dog_profile.jpg', alt: 'Dog Profile Image', class: 'is-pulled-right user-dog-image') %>
-        <p><strong>Name:</strong> <%= dog.breed %></p>
-        <p><strong>Age:</strong> <%= years_old dog %></p>
-        <p><strong>Sex:</strong> <%= dog.sex %></p>
-        <p><strong>Number of Reservations:</strong> <%= dog.reservations.size %></p>
-        <hr>
-        <p><%= link_to 'Edit Dog Details', edit_user_dog_path(@user, dog) %></p>
-        <p><%= link_to 'Remove this Dog', dog, method: :delete, data: { confirm: "Are you sure?" } %></p>
+    <% if @dogs.size > 0 %>
+      <% @dogs.each do |dog| %>
+        <article class='box'>
+          <h4 class='title is-5'><%= link_to dog.name, user_dog_path(@user, dog) %></h4>
+          <%= image_tag('dog_profile.jpg', alt: 'Dog Profile Image', class: 'is-pulled-right user-dog-image') %>
+          <p><strong>Name:</strong> <%= dog.breed %></p>
+          <p><strong>Age:</strong> <%= years_old dog %></p>
+          <p><strong>Sex:</strong> <%= dog.sex %></p>
+          <p><strong>Number of Reservations:</strong> <%= dog.reservations.size %></p>
+          <hr>
+          <p><%= link_to 'Edit Dog Details', edit_user_dog_path(@user, dog) %></p>
+          <p><%= link_to 'Remove this Dog', dog, method: :delete, data: { confirm: "Are you sure?" } %></p>
+        </article>
+      <% end %>
+    <% else %>
+      <article class="message is-danger">
+        <div class="message-body">
+          No dogs found...
+        </div>
       </article>
     <% end %>
   </div>

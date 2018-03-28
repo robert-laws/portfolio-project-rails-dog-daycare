@@ -11,6 +11,8 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true, format: { without: /\s/, message: "must be a single word" }
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :password, presence: true, length: { minimum: 6 }, unless: :user_created
+  # validates_associated :addresses
+  # validates_associated :dogs
   # validates :first_name, presence: true
   # validates :last_name, presence: true
 

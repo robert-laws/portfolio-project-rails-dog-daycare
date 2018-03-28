@@ -15,6 +15,28 @@ class AddressesController < ApplicationController
     end
   end
 
+  def new
+    if params[:user_id]
+      @user = User.find(params[:user_id])
+      if current_user != @user
+        redirect_to root_path
+      else
+        @address = @user.addresses.new
+      end
+    else
+      redirect_to root_path
+    end
+  end
+
+  def create
+    @address = Address.new(address_params)
+    if @address.save
+      redirect_to user_path(@address.user), notice: "New address successfully added to your account"
+    else
+      render :new
+    end
+  end
+
   def edit
     if params[:user_id]
       @user = User.find(params[:user_id])
@@ -43,6 +65,6 @@ class AddressesController < ApplicationController
   private
 
   def address_params
-    params.require(:address).permit(:street_1, :street_2, :city, :state, :zip_code)
+    params.require(:address).permit(:street_1, :street_2, :city, :state, :zip_code, :user_id)
   end
 end

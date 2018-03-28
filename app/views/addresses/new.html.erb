@@ -1,0 +1,7 @@
+<%= provide(:title, 'Add New Address') %>
+
+<h1 class="title">Add New Address Form</h1>
+
+<%= render partial: 'shared/form_errors', object: @address, as: 'obj' %>
+
+<%= render partial: 'form', locals: { submit_text: "Add Address to Account" } %>
