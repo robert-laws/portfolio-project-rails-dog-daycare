@@ -10,7 +10,9 @@
     <%= render partial: 'user_type', locals: { headline: "Hello, #{current_user.username}!" } %>
 
     <% if @profile_edit && @number == 0 %>
-      <p>please take some time to add more information to your profile. First, select the number of dogs (between 1 and 3) you would like to add to your account. Once you have added dogs and saved your updated profile, you will be able to make reservations.</p>
+      <hr>
+      <h4 class="title is-4">Getting started with Dog Daycare</h4>
+      <p>Please take some time to add more information to your profile. First, select the number of dogs (between 1 and 3) you would like to add to your account. Once you have added information for your dog(s) and saved your updated profile, you will be able to make reservations.</p>
     <% end %>
 
     <hr>
