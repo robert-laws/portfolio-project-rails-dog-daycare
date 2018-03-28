@@ -14,7 +14,7 @@ class ActivitiesController < ApplicationController
     else
       @activities = Activity.all_except_custom
 
-      Activity.columns.each do |col|
+      Activity.activity_columns.each do |col|
         param_value = params[col].present? ? params[col] : nil
         @activities = @activities.by_select(col, param_value) unless param_value.nil?
       end

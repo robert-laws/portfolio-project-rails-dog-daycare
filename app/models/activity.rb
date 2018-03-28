@@ -16,7 +16,7 @@ class Activity < ApplicationRecord
     where("#{which_column} = ?", value)
   end
 
-  def self.columns
+  def self.activity_columns
     ["best_for_size", "best_for_type", "energy_usage"]
   end
 
