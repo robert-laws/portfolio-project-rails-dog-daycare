@@ -13,9 +13,11 @@
       <p><strong>Best for Type:</strong> <%= @activity.best_for_type %></p>
       <p><strong>Energy Usage:</strong> <%= @activity.energy_usage %></p>
       <p><strong>Custom:</strong> <%= @activity.custom %></p>
-      <hr>
-      <p><%= link_to 'Edit Activity', edit_activity_path(@activity) %></p>
-      <p><%= link_to 'Delete Activity', @activity, method: :delete, data: { confirm: "Are you sure?" } %></p>
+      <% if current_user.admin %>
+        <hr>
+        <p><%= link_to 'Edit Activity', edit_activity_path(@activity) %></p>
+        <p><%= link_to 'Delete Activity', @activity, method: :delete, data: { confirm: "Are you sure?" } %></p>
+      <% end %>
     </article>
   </div>
 </div>

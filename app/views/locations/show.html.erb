@@ -17,9 +17,11 @@
       <% @location.activities.each do |activity| %>
         <p><%= link_to activity.name, location_activity_path(@location, activity) %></p>
       <% end %>
-      <hr>
-      <p><%= link_to 'Edit Location', edit_location_path(@location) %></p>
-      <p><%= link_to 'Delete Location', @location, method: :delete, data: { confirm: "Are you sure?" } %></p>
+      <% if current_user.admin %>
+        <hr>
+        <p><%= link_to 'Edit Location', edit_location_path(@location) %></p>
+        <p><%= link_to 'Delete Location', @location, method: :delete, data: { confirm: "Are you sure?" } %></p>
+      <% end %>
     </article>
   </div>
 </div>
